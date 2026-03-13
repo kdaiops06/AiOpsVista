@@ -69,6 +69,7 @@ const config: Config = {
       },
       items: [
         {to: '/services', label: 'Services', position: 'left'},
+        {to: '/case-studies', label: 'Case Studies', position: 'left'},
         {
           type: 'docSidebar',
           sidebarId: 'tutorialSidebar',
@@ -94,7 +95,7 @@ const config: Config = {
           title: 'Consulting',
           items: [
             {label: 'Services', to: '/services'},
-            {label: 'Case Studies', to: '/services#case-studies'},
+            {label: 'Case Studies', to: '/case-studies'},
             {label: 'Book a Consultation', to: '/contact'},
           ],
         },
