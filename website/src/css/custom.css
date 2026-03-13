@@ -1,20 +1,17 @@
 /**
- * Any CSS included here will be global. The classic template
- * bundles Infima by default. Infima is a CSS framework designed to
- * work well for content-centric websites.
+ * AIOps Vista — Professional Theme
  */
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
 
-/* You can override the default Infima variables here. */
 :root {
-  --ifm-color-primary: #1a73e8;
-  --ifm-color-primary-dark: #1765d1;
-  --ifm-color-primary-darker: #165fc5;
-  --ifm-color-primary-darkest: #124ea3;
-  --ifm-color-primary-light: #2d80ea;
-  --ifm-color-primary-lighter: #3987eb;
-  --ifm-color-primary-lightest: #5d9def;
+  --ifm-color-primary: #0f62fe;
+  --ifm-color-primary-dark: #0d56e0;
+  --ifm-color-primary-darker: #0c51d4;
+  --ifm-color-primary-darkest: #0a42ae;
+  --ifm-color-primary-light: #2b74fe;
+  --ifm-color-primary-lighter: #377dfe;
+  --ifm-color-primary-lightest: #6499fe;
   --ifm-code-font-size: 95%;
   --ifm-font-family-base: 'Inter', system-ui, -apple-system, sans-serif;
   --ifm-heading-font-family: 'Inter', system-ui, -apple-system, sans-serif;
@@ -22,127 +19,212 @@
   --ifm-heading-font-weight: 700;
   --ifm-font-weight-bold: 600;
   --ifm-line-height-base: 1.7;
-  --ifm-heading-line-height: 1.3;
+  --ifm-heading-line-height: 1.25;
+  --ifm-global-radius: 8px;
+  --ifm-navbar-height: 64px;
+  --site-bg-gradient: linear-gradient(135deg, #0f62fe 0%, #6929c4 100%);
+  --card-bg: #ffffff;
+  --card-border: rgba(0, 0, 0, 0.08);
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
 }
 
-/* For readability concerns, you should choose a lighter palette in dark mode. */
 [data-theme='dark'] {
-  --ifm-color-primary: #4da3ff;
-  --ifm-color-primary-dark: #2e93ff;
-  --ifm-color-primary-darker: #1f8bff;
-  --ifm-color-primary-darkest: #0073e6;
-  --ifm-color-primary-light: #6cb3ff;
-  --ifm-color-primary-lighter: #7bbbff;
-  --ifm-color-primary-lightest: #a9d4ff;
+  --ifm-color-primary: #78a9ff;
+  --ifm-color-primary-dark: #5693ff;
+  --ifm-color-primary-darker: #4589ff;
+  --ifm-color-primary-darkest: #1268ff;
+  --ifm-color-primary-light: #9abfff;
+  --ifm-color-primary-lighter: #abc8ff;
+  --ifm-color-primary-lightest: #deebff;
+  --ifm-background-color: #161616;
+  --ifm-background-surface-color: #1e1e1e;
+  --card-bg: #262626;
+  --card-border: rgba(255, 255, 255, 0.1);
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
 
-/* Headings */
-h1 {
-  font-weight: 800;
-  letter-spacing: -0.02em;
-}
+/* GLOBAL */
+html { scroll-behavior: smooth; }
+h1 { font-weight: 800; letter-spacing: -0.025em; }
+h2 { font-weight: 700; letter-spacing: -0.015em; }
+h3, h4, h5 { font-weight: 600; }
 
-h2 {
-  font-weight: 700;
-  letter-spacing: -0.01em;
-}
-
-h3, h4, h5 {
-  font-weight: 600;
-}
-
-/* Navbar */
+/* NAVBAR */
 .navbar {
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  backdrop-filter: saturate(180%) blur(20px);
+  background: rgba(255, 255, 255, 0.85);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  box-shadow: none;
   font-weight: 500;
+  padding: 0.5rem 0;
+}
+
+[data-theme='dark'] .navbar {
+  background: rgba(22, 22, 22, 0.9);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .navbar__title {
-  font-weight: 700;
-  font-size: 1.2rem;
+  font-weight: 800;
+  font-size: 1.25rem;
+  background: linear-gradient(135deg, #0f62fe, #6929c4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
-/* Hero section */
-.hero {
+[data-theme='dark'] .navbar__title {
+  background: linear-gradient(135deg, #78a9ff, #be95ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.navbar__link { font-weight: 500; font-size: 0.95rem; transition: color 0.2s ease; }
+.navbar__link:hover { color: var(--ifm-color-primary); }
+.navbar__link--active { font-weight: 600; }
+
+/* HERO */
+.heroBanner {
+  background: var(--site-bg-gradient);
+  padding: 6rem 2rem;
   text-align: center;
+  position: relative;
+  overflow: hidden;
+  color: #fff;
+}
+
+.heroBanner::before {
+  content: '';
+  position: absolute;
+  top: -50%; left: -50%;
+  width: 200%; height: 200%;
+  background: radial-gradient(circle at 30% 50%, rgba(255,255,255,0.08) 0%, transparent 60%),
+              radial-gradient(circle at 70% 80%, rgba(105,41,196,0.15) 0%, transparent 50%);
+  animation: subtleMove 20s ease-in-out infinite alternate;
+}
+
+@keyframes subtleMove {
+  0% { transform: translate(0, 0); }
+  100% { transform: translate(-2%, -1%); }
 }
 
 .hero__title {
-  font-size: 3rem;
-  font-weight: 800;
-  letter-spacing: -0.03em;
+  font-size: 3.5rem; font-weight: 800; letter-spacing: -0.04em;
+  margin-bottom: 1rem; position: relative; z-index: 1;
 }
 
 .hero__subtitle {
-  font-size: 1.3rem;
-  font-weight: 400;
-  opacity: 0.9;
-  max-width: 600px;
+  font-size: 1.35rem; font-weight: 400; opacity: 0.92;
+  max-width: 650px; margin: 0 auto 2rem; line-height: 1.6;
+  position: relative; z-index: 1;
+}
+
+/* FEATURES */
+.featuresSection { padding: 5rem 0; }
+
+.sectionTitle { text-align: center; margin-bottom: 3rem; }
+.sectionTitle h2 { font-size: 2rem; font-weight: 800; letter-spacing: -0.02em; margin-bottom: 0.5rem; }
+.sectionTitle p { font-size: 1.1rem; color: var(--ifm-color-emphasis-600); max-width: 550px; margin: 0 auto; }
+
+.featuresGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  max-width: 1100px;
   margin: 0 auto;
-  line-height: 1.6;
+  padding: 0 1.5rem;
 }
 
-/* Docs content */
+.featureCard {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 12px;
+  padding: 2rem;
+  transition: all 0.3s ease;
+  text-align: left;
+}
+
+.featureCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
+  border-color: var(--ifm-color-primary-lighter);
+}
+
+[data-theme='dark'] .featureCard:hover {
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+}
+
+.featureIcon {
+  width: 48px; height: 48px; border-radius: 12px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.5rem; margin-bottom: 1.25rem;
+}
+
+.featureCard h3 { font-size: 1.15rem; font-weight: 700; margin-bottom: 0.6rem; }
+.featureCard p { font-size: 0.93rem; line-height: 1.65; color: var(--ifm-color-emphasis-700); margin: 0; }
+
+.featureTag {
+  display: inline-block; margin-top: 1rem; padding: 0.25rem 0.75rem;
+  border-radius: 99px; font-size: 0.75rem; font-weight: 600;
+  text-transform: uppercase; letter-spacing: 0.03em;
+}
+
+/* STATS BAR */
+.statsBar {
+  background: var(--ifm-background-surface-color, #f8f9fa);
+  border-bottom: 1px solid var(--card-border);
+  padding: 2rem 0;
+}
+
+.statsGrid {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem;
+  max-width: 900px; margin: 0 auto; text-align: center;
+}
+
+.statItem h3 { font-size: 2rem; font-weight: 800; color: var(--ifm-color-primary); margin: 0; }
+.statItem p {
+  font-size: 0.85rem; color: var(--ifm-color-emphasis-600); margin: 0.25rem 0 0;
+  text-transform: uppercase; letter-spacing: 0.05em; font-weight: 500;
+}
+
+/* CTA SECTION */
+.ctaSection {
+  background: var(--site-bg-gradient);
+  padding: 5rem 2rem; text-align: center; color: #fff;
+}
+.ctaSection h2 { font-size: 2rem; font-weight: 800; margin-bottom: 0.75rem; }
+.ctaSection p { font-size: 1.1rem; opacity: 0.9; margin-bottom: 2rem; max-width: 500px; margin-left: auto; margin-right: auto; }
+
+/* DOCS PAGES */
 .markdown h1:first-child {
-  font-size: 2.2rem;
+  font-size: 2.2rem; padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--ifm-color-primary-lightest); margin-bottom: 1.5rem;
 }
+.markdown p { line-height: 1.8; }
+.markdown code { border-radius: 4px; padding: 0.15rem 0.4rem; }
 
-.markdown p {
-  line-height: 1.8;
-}
+/* SIDEBAR */
+.menu__link { font-weight: 500; font-size: 0.92rem; border-radius: 6px; transition: all 0.15s ease; }
+.menu__link--active { font-weight: 600; }
+.menu__list-item-collapsible:hover { background: var(--ifm-hover-overlay); border-radius: 6px; }
 
-/* Footer */
-.footer {
-  font-size: 0.9rem;
-}
+/* TOC */
+.table-of-contents__link { font-size: 0.88rem; }
+.table-of-contents__link--active { font-weight: 600; color: var(--ifm-color-primary); }
 
-.footer__title {
-  font-weight: 700;
-  text-transform: uppercase;
-  font-size: 0.8rem;
-  letter-spacing: 0.05em;
-}
+/* FOOTER */
+.footer--dark { background: #161616; }
+.footer { font-size: 0.9rem; padding-top: 3rem; }
+.footer__title { font-weight: 700; text-transform: uppercase; font-size: 0.78rem; letter-spacing: 0.08em; margin-bottom: 1rem; }
+.footer__link-item { font-size: 0.9rem; line-height: 2; }
+.footer__copyright { margin-top: 2.5rem; padding-top: 1.5rem; border-top: 1px solid rgba(255, 255, 255, 0.1); font-size: 0.85rem; opacity: 0.7; }
 
-/* Cards / Features */
-.feature-card {
-  text-align: center;
-  padding: 1.5rem;
-}
-
-.feature-card h3 {
-  margin-top: 1rem;
-  font-size: 1.2rem;
-}
-
-.feature-card p {
-  color: var(--ifm-color-emphasis-700);
-  font-size: 0.95rem;
-  line-height: 1.6;
-}
-
-/* Sidebar */
-.menu__link {
-  font-weight: 500;
-  font-size: 0.92rem;
-}
-
-.menu__link--active {
-  font-weight: 600;
-}
-
-/* Better spacing for doc pages */
-.docMainContainer_node_modules-\@docusaurus-theme-classic-lib-theme-DocPage-Layout-Main-styles-module {
-  max-width: 800px;
-}
-
+/* RESPONSIVE */
 @media screen and (max-width: 996px) {
-  .hero__title {
-    font-size: 2.2rem;
-  }
-
-  .hero__subtitle {
-    font-size: 1.1rem;
-  }
+  .hero__title { font-size: 2.4rem; }
+  .hero__subtitle { font-size: 1.1rem; }
+  .heroBanner { padding: 4rem 1.5rem; }
+  .statsGrid { grid-template-columns: repeat(2, 1fr); }
+  .featuresGrid { grid-template-columns: 1fr; gap: 1.25rem; }
 }

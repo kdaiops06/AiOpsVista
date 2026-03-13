@@ -89,6 +89,11 @@ const config: Config = {
         },
         {to: '/blog', label: 'Blog', position: 'left'},
         {
+          href: 'https://aiopsvista.com',
+          label: 'Main Site',
+          position: 'right',
+        },
+        {
           href: 'https://github.com/kdaiops06/AiOps-docs',
           label: 'GitHub',
           position: 'right',
