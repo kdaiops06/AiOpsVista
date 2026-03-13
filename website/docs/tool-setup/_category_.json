@@ -1,0 +1,8 @@
+{
+  "label": "Tool Setup",
+  "position": 5,
+  "link": {
+    "type": "generated-index",
+    "description": "Step-by-step setup guides for VS Code, Claude, GitHub Copilot, Cursor, Docker, Jupyter, and other modern AI dev tools."
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "label": "AIOps",
+  "position": 2,
+  "link": {
+    "type": "generated-index",
+    "description": "AI for IT Operations — monitoring, anomaly detection, incident management, predictive scaling, and autonomous operations."
+  }
+}

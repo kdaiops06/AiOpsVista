@@ -1,0 +1,8 @@
+{
+  "label": "AI Learning",
+  "position": 4,
+  "link": {
+    "type": "generated-index",
+    "description": "Learn AI from the basics — machine learning, deep learning, NLP, LLMs, prompt engineering, RAG, and AI agents."
+  }
+}

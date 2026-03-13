@@ -1,0 +1,8 @@
+{
+  "label": "AI Infrastructure",
+  "position": 3,
+  "link": {
+    "type": "generated-index",
+    "description": "Build and manage AI/ML platforms — GPU clusters, Kubernetes for ML, model serving, and MLOps pipelines."
+  }
+}
