@@ -15,7 +15,7 @@ const config: Config = {
   baseUrl: '/',
 
   organizationName: 'kdaiops06',
-  projectName: 'AiOps-docs',
+  projectName: 'AiOpsVista',
 
   onBrokenLinks: 'throw',
 
@@ -30,7 +30,7 @@ const config: Config = {
       {
         docs: {
           sidebarPath: './sidebars.ts',
-          editUrl: 'https://github.com/kdaiops06/AiOps-docs/tree/main/website/',
+          editUrl: 'https://github.com/kdaiops06/AiOpsVista/tree/main/website/',
         },
         blog: {
           showReadingTime: true,
@@ -40,7 +40,7 @@ const config: Config = {
             type: ['rss', 'atom'],
             xslt: true,
           },
-          editUrl: 'https://github.com/kdaiops06/AiOps-docs/tree/main/website/',
+          editUrl: 'https://github.com/kdaiops06/AiOpsVista/tree/main/website/',
           onInlineTags: 'warn',
           onInlineAuthors: 'warn',
           onUntruncatedBlogPosts: 'warn',
@@ -82,7 +82,7 @@ const config: Config = {
         {to: '/about', label: 'About', position: 'right'},
         {to: '/contact', label: 'Contact', position: 'right'},
         {
-          href: 'https://github.com/kdaiops06/AiOps-docs',
+          href: 'https://github.com/kdaiops06/AiOpsVista',
           label: 'GitHub',
           position: 'right',
         },
@@ -123,7 +123,7 @@ const config: Config = {
             {label: 'About', to: '/about'},
             {label: 'Contact', to: '/contact'},
             {label: 'Newsletter', to: '/newsletter'},
-            {label: 'GitHub', href: 'https://github.com/kdaiops06/AiOps-docs'},
+            {label: 'GitHub', href: 'https://github.com/kdaiops06/AiOpsVista'},
           ],
         },
       ],

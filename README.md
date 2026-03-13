@@ -69,7 +69,7 @@ All AI-generated content goes through pull requests for human review before publ
 ## Project Structure
 
 ```
-AiOps-docs/
+AiOpsVista/
 ├── .github/workflows/
 │   ├── deploy.yml              # Build & deploy to GitHub Pages
 │   ├── ai-blog-generator.yml   # Weekly AI blog generation
