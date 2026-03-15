@@ -321,7 +321,11 @@ groups:
       # Quality degradation
       - alert: LLMQualityDrop
         expr: |
-          avg(llm_quality_score{evaluation_method="automated"}) < 0.7
+          (
+            sum(rate(llm_quality_score_sum{evaluation_method="automated"}[5m]))
+            /
+            sum(rate(llm_quality_score_count{evaluation_method="automated"}[5m]))
+          ) < 0.7
         for: 30m
         labels:
           severity: warning
