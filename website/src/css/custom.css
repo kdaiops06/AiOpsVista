@@ -1883,7 +1883,7 @@ h3 { font-weight: 600; letter-spacing: -0.01em; }
   display: flex;
   flex-direction: column;
   background: var(--card-bg);
-  border: 1px solid rgba(0, 0, 0, 0.08);
+  border: 1px solid var(--card-border);
   border-radius: 12px;
   padding: 2rem;
   text-decoration: none;
@@ -1912,7 +1912,7 @@ h3 { font-weight: 600; letter-spacing: -0.01em; }
 
 .authority-card p {
   font-size: 0.92rem;
-  color: var(--ifm-font-color-secondary, #555);
+  color: var(--ifm-color-emphasis-700);
   line-height: 1.6;
   flex: 1;
 }
@@ -1931,7 +1931,7 @@ h3 { font-weight: 600; letter-spacing: -0.01em; }
   display: flex;
   flex-direction: column;
   background: var(--card-bg);
-  border: 1px solid rgba(0, 0, 0, 0.08);
+  border: 1px solid var(--card-border);
   border-radius: 12px;
   padding: 1.75rem;
   text-decoration: none;
@@ -1996,7 +1996,7 @@ h3 { font-weight: 600; letter-spacing: -0.01em; }
   display: flex;
   flex-direction: column;
   background: var(--card-bg);
-  border: 1px solid rgba(0, 0, 0, 0.08);
+  border: 1px solid var(--card-border);
   border-radius: 12px;
   padding: 2rem;
   text-decoration: none;
@@ -2048,7 +2048,7 @@ h3 { font-weight: 600; letter-spacing: -0.01em; }
   flex-direction: column;
   align-items: flex-start;
   background: var(--card-bg);
-  border: 1px solid rgba(0, 0, 0, 0.08);
+  border: 1px solid var(--card-border);
   border-radius: 12px;
   padding: 1.75rem;
   text-decoration: none;
