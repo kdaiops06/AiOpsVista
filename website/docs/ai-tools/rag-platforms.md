@@ -123,6 +123,8 @@ For production RAG system design patterns, deployment strategies, and optimizati
 
 - [Production RAG Systems →](/docs/ai-architecture/production-rag-systems)
 - [LangChain vs Haystack →](/comparisons/langchain-vs-haystack)
+- [LangChain vs LlamaIndex →](/docs/comparisons/langchain-vs-llamaindex)
+- [Haystack vs LlamaIndex →](/docs/comparisons/haystack-vs-llamaindex)
 - [Pinecone vs Weaviate →](/comparisons/pinecone-vs-weaviate)
 - [AI Observability Tools →](./ai-observability-tools)
 - [AI Tool Directory →](/ai-tools)

@@ -212,4 +212,5 @@ pc.create_index(
 - [RAG Platforms (Haystack, LlamaIndex) →](./rag-platforms)
 - [Production RAG Systems →](/docs/ai-architecture/production-rag-systems)
 - [Pinecone vs Weaviate →](/comparisons/pinecone-vs-weaviate)
+- [Pinecone vs Qdrant →](/docs/comparisons/pinecone-vs-qdrant)
 - [AI Infrastructure Consulting →](/services)

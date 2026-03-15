@@ -1,0 +1,8 @@
+{
+  "label": "Tool Comparisons",
+  "position": 1.8,
+  "link": {
+    "type": "generated-index",
+    "description": "Head-to-head technical comparisons of AI infrastructure tools — vector databases, LLM orchestration frameworks, AI gateways, observability platforms, and security tools."
+  }
+}

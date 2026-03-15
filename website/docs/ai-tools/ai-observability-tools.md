@@ -147,5 +147,7 @@ Arize Phoenix      Both (parallel)         Langfuse
 
 - [AI Observability Stack Architecture →](/docs/ai-architecture/ai-observability-stack)
 - [Production RAG Systems →](/docs/ai-architecture/production-rag-systems)
+- [LangSmith vs Langfuse →](/docs/comparisons/langsmith-vs-langfuse)
+- [Langfuse vs Arize Phoenix →](/comparisons/langfuse-vs-arize)
 - [AI Tool Directory →](/ai-tools)
 - [AI Infrastructure Consulting →](/services)

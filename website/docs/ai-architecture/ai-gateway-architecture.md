@@ -367,5 +367,6 @@ gateway:
 - [Enterprise AI Security →](./enterprise-ai-security)
 - [LLM Security Tools →](/docs/ai-tools/llm-security-tools)
 - [AI Observability Tools →](/docs/ai-tools/ai-observability-tools)
+- [Portkey vs LiteLLM →](/docs/comparisons/portkey-vs-litellm)
 - [Architecture Playbooks Index →](./architecture-playbooks)
 - [AI Infrastructure Consulting →](/services)

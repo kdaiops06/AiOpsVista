@@ -268,4 +268,5 @@ For enterprise teams needing security-first gateway functionality with SOC monit
 - [AI Gateway Architecture →](/docs/ai-architecture/ai-gateway-architecture)
 - [Secure LLM Pipelines →](/docs/ai-architecture/secure-llm-pipelines)
 - [Prompt Injection Defense →](/docs/ai-architecture/prompt-injection-defense)
+- [Portkey vs LiteLLM →](/docs/comparisons/portkey-vs-litellm)
 - [AI Infrastructure Consulting →](/services)

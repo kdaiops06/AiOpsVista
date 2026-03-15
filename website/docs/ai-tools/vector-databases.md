@@ -354,4 +354,6 @@ All three vector databases integrate with the broader AI infrastructure stack:
 - [Production RAG Systems →](/docs/ai-architecture/production-rag-systems)
 - [AI Infrastructure on Kubernetes →](/docs/ai-architecture/ai-infrastructure-kubernetes)
 - [Pinecone vs Weaviate →](/comparisons/pinecone-vs-weaviate)
+- [Pinecone vs Qdrant →](/docs/comparisons/pinecone-vs-qdrant)
+- [Weaviate vs Qdrant →](/docs/comparisons/weaviate-vs-qdrant)
 - [AI Infrastructure Consulting →](/services)

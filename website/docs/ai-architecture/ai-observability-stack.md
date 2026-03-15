@@ -287,6 +287,7 @@ llm_retrieval_relevance = Histogram(
 - [AI Observability Tools →](/docs/ai-tools/ai-observability-tools)
 - [Langfuse Review →](/tools/langfuse-review)
 - [Langfuse vs Arize Phoenix →](/comparisons/langfuse-vs-arize)
+- [LangSmith vs Langfuse →](/docs/comparisons/langsmith-vs-langfuse)
 - [Observability Stack Blog Post →](/blog/complete-observability-stack-2026)
 - [Architecture Playbooks Index →](./architecture-playbooks)
 - [AI Infrastructure Consulting →](/services)

@@ -284,6 +284,8 @@ security:
 | **Observability** | [Langfuse →](/tools/langfuse-review) | RAG pipeline tracing and evaluation |
 | **RAG Platforms** | [RAG Platforms →](/docs/ai-tools/rag-platforms) | Haystack, LlamaIndex, and RAG framework tools |
 | **Comparison** | [Pinecone vs Weaviate →](/comparisons/pinecone-vs-weaviate) | Vector database comparison for RAG systems |
+| **Comparison** | [Pinecone vs Qdrant →](/docs/comparisons/pinecone-vs-qdrant) | Managed vs open-source vector search |
+| **Comparison** | [Haystack vs LlamaIndex →](/docs/comparisons/haystack-vs-llamaindex) | RAG framework comparison |
 
 ## Related Guides
 
@@ -299,6 +301,9 @@ security:
 - [AI Observability Tools →](/docs/ai-tools/ai-observability-tools)
 - [Langfuse Review →](/tools/langfuse-review)
 - [LangChain vs Haystack →](/comparisons/langchain-vs-haystack)
+- [LangChain vs LlamaIndex →](/docs/comparisons/langchain-vs-llamaindex)
+- [Haystack vs LlamaIndex →](/docs/comparisons/haystack-vs-llamaindex)
+- [Pinecone vs Qdrant →](/docs/comparisons/pinecone-vs-qdrant)
 - [Pinecone vs Weaviate →](/comparisons/pinecone-vs-weaviate)
 - [Architecture Playbooks Index →](./architecture-playbooks)
 - [AI Infrastructure Consulting →](/services)

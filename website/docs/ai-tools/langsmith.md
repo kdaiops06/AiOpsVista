@@ -227,7 +227,7 @@ For a detailed comparison, see [Langfuse vs Arize Phoenix →](/comparisons/lang
 - [DevOps for AI Systems →](/docs/ai-architecture/devops-for-ai-agents)
 - [AI Observability Stack →](/docs/ai-architecture/ai-observability-stack)
 - [LLM Monitoring and Tracing →](/docs/ai-architecture/llm-monitoring-tracing)
-- [LangChain Review →](/tools/langchain-review)
+- [LangSmith vs Langfuse →](/docs/comparisons/langsmith-vs-langfuse)
 - [LangChain vs Haystack →](/comparisons/langchain-vs-haystack)
 - [Langfuse vs Arize Phoenix →](/comparisons/langfuse-vs-arize)
 - [AI Infrastructure Consulting →](/services)

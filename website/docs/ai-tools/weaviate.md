@@ -203,4 +203,5 @@ helm install weaviate weaviate/weaviate \
 - [Production RAG Systems →](/docs/ai-architecture/production-rag-systems)
 - [AI Infrastructure on Kubernetes →](/docs/ai-architecture/ai-infrastructure-kubernetes)
 - [Pinecone vs Weaviate →](/comparisons/pinecone-vs-weaviate)
+- [Weaviate vs Qdrant →](/docs/comparisons/weaviate-vs-qdrant)
 - [AI Infrastructure Consulting →](/services)
