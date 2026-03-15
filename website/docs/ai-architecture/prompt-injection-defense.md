@@ -394,6 +394,7 @@ def run_red_team_suite(endpoint: str) -> dict:
 - [Secure LLM Pipelines →](./secure-llm-pipelines)
 - [Enterprise AI Security →](./enterprise-ai-security)
 - [AI Gateway Architecture →](./ai-gateway-architecture)
+- [SlashLLM →](/docs/ai-tools/slashllm)
 - [LLM Security Tools →](/docs/ai-tools/llm-security-tools)
 - [Lakera Guard Review →](/tools/lakera-guard-review)
 - [Lakera vs Guardrails AI →](/comparisons/lakera-vs-guardrails)

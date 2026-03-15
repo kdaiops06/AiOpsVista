@@ -27,6 +27,18 @@ Engineering teams evaluating AI infrastructure face a fragmented market with hun
 | [LLM Orchestration](./llm-orchestration-tools) | LangChain | Chains, agents, tool-use |
 | [RAG Platforms](./rag-platforms) | Haystack, LlamaIndex | Retrieval, indexing, search |
 | [AI Agent Frameworks](./ai-agent-frameworks) | CrewAI, AutoGen | Multi-agent, workflow automation |
+| [Vector Databases](./vector-databases) | Pinecone, Weaviate, Qdrant | Embedding storage, similarity search |
+| [AI Gateways](./ai-gateways) | Portkey, LiteLLM, Kong AI Gateway, SlashLLM | LLM routing, security, cost tracking |
+
+## Tool Deep-Dives
+
+| Tool | Category | Page |
+|---|---|---|
+| [SlashLLM](./slashllm) | LLM Security / AI Gateway | Full-stack enterprise AI security platform |
+| [LangSmith](./langsmith) | AI Observability / Development | LLM debugging, testing, and evaluation platform |
+| [Pinecone](./pinecone) | Vector Database | Fully managed vector database |
+| [Weaviate](./weaviate) | Vector Database | Open-source vector DB with built-in vectorization |
+| [Qdrant](./qdrant) | Vector Database | High-performance Rust-based vector search |
 
 ## How We Evaluate Tools
 
@@ -61,7 +73,9 @@ We publish full technical reviews for select tools:
 
 ## Related Resources
 
-- [AI Tool Directory (visual) →](/ai-tools)
+- [AI Tool Directory (interactive) →](/ai-tools)
 - [AI Architecture Guides →](/docs/category/ai-architecture)
+- [AI Gateway Architecture →](/docs/ai-architecture/ai-gateway-architecture)
+- [Production RAG Systems →](/docs/ai-architecture/production-rag-systems)
 - [AI Infrastructure Consulting →](/services)
 - [Partner With AIOpsVista →](/partner-with-aiopsvista)

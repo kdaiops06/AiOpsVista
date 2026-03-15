@@ -347,6 +347,8 @@ gateway:
 
 ## Related
 
+- [AI Gateways (Tool Directory) →](/docs/ai-tools/ai-gateways)
+- [SlashLLM →](/docs/ai-tools/slashllm)
 - [Secure LLM Pipelines →](./secure-llm-pipelines)
 - [AI Observability Stack →](./ai-observability-stack)
 - [Enterprise AI Security →](./enterprise-ai-security)

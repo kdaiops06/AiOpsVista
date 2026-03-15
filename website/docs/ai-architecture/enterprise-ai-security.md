@@ -248,6 +248,7 @@ Essential governance policies every enterprise should define:
 - [Secure LLM Pipelines →](./secure-llm-pipelines)
 - [AI Observability Stack →](./ai-observability-stack)
 - [AI Gateway Architecture →](./ai-gateway-architecture)
+- [SlashLLM →](/docs/ai-tools/slashllm)
 - [LLM Security Tools →](/docs/ai-tools/llm-security-tools)
 - [Lakera Guard Review →](/tools/lakera-guard-review)
 - [Lakera vs Guardrails AI →](/comparisons/lakera-vs-guardrails)

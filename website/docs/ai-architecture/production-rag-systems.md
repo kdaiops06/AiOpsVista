@@ -276,6 +276,10 @@ security:
 
 ## Related
 
+- [Vector Databases (Pinecone, Weaviate, Qdrant) →](/docs/ai-tools/vector-databases)
+- [Pinecone →](/docs/ai-tools/pinecone)
+- [Weaviate →](/docs/ai-tools/weaviate)
+- [Qdrant →](/docs/ai-tools/qdrant)
 - [AI Observability Stack →](./ai-observability-stack)
 - [Secure LLM Pipelines →](./secure-llm-pipelines)
 - [RAG Platforms (Haystack, LlamaIndex) →](/docs/ai-tools/rag-platforms)
