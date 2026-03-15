@@ -288,12 +288,15 @@ Instructions...
 
 ### GitHub Actions Workflows
 
-| Workflow                    | Trigger         | Action                                        |
-|-----------------------------|-----------------|-----------------------------------------------|
-| `deploy.yml`               | Push to main    | Build and deploy site                         |
-| `ai-blog-generator.yml`   | Weekly schedule  | Generate blog post draft via AI → PR          |
-| `ai-tech-news.yml`        | Weekly schedule  | Generate tech news roundup via AI → PR        |
-| `ai-docs-updater.yml`     | Monthly schedule | Review and update documentation via AI → PR   |
+| Workflow                          | Trigger          | Action                                        |
+|-----------------------------------|------------------|-----------------------------------------------|
+| `deploy.yml`                      | Push to main     | Build and deploy site                         |
+| `ai-blog-generator.yml`          | Weekly (Mon)     | Generate blog post draft via AI → PR          |
+| `ai-architecture-insights.yml`   | Weekly (Wed)     | Generate architecture insights article → PR   |
+| `ai-tech-news.yml`               | Weekly (Fri)     | Generate tech news roundup via AI → PR        |
+| `ai-docs-updater.yml`            | Monthly (1st)    | Review and update documentation via AI → PR   |
+| `ai-tool-discovery.yml`          | Monthly (15th)   | Generate emerging tool docs via AI → PR       |
+| `ai-comparison-expansion.yml`    | Monthly (1st)    | Generate new comparison page via AI → PR      |
 
 ### AI Prompt Templates
 

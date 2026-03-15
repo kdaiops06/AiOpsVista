@@ -1,0 +1,220 @@
+name: AI Tool Discovery Generator
+
+on:
+  schedule:
+    # Run on the 15th of every month at 9:00 AM UTC
+    - cron: '0 9 15 * *'
+  workflow_dispatch:
+    inputs:
+      tool_category:
+        description: 'Tool category to explore'
+        required: true
+        type: choice
+        options:
+          - vector-databases
+          - ai-observability
+          - llm-security
+          - ai-gateways
+          - llm-orchestration
+          - rag-platforms
+          - ai-agent-frameworks
+          - mlops
+
+permissions:
+  contents: write
+  pull-requests: write
+
+env:
+  DOCS_DIR: website/docs/ai-tools
+
+jobs:
+  generate-tool-discovery:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install anthropic pyyaml
+
+      - name: Catalog existing tool docs
+        id: catalog
+        run: |
+          echo "## Existing tool docs:" > /tmp/existing_tools.txt
+          for f in website/docs/ai-tools/*.md; do
+            echo "### $(basename "$f")" >> /tmp/existing_tools.txt
+            head -10 "$f" >> /tmp/existing_tools.txt
+            echo "" >> /tmp/existing_tools.txt
+          done
+
+      - name: Generate tool discovery doc
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          TOOL_CATEGORY: ${{ github.event.inputs.tool_category || '' }}
+        run: |
+          python << 'PYEOF'
+          import anthropic
+          import os
+          import re
+          import glob
+
+          client = anthropic.Anthropic()
+          docs_dir = os.environ.get("DOCS_DIR", "website/docs/ai-tools")
+          category = os.environ.get("TOOL_CATEGORY", "")
+
+          # Read existing tools catalog
+          existing = ""
+          try:
+              with open("/tmp/existing_tools.txt") as f:
+                  existing = f.read()
+          except FileNotFoundError:
+              pass
+
+          # Count existing docs for sidebar_position
+          existing_count = len(glob.glob(f"{docs_dir}/*.md"))
+
+          if not category:
+              # Auto-select category for scheduled runs
+              prompt_category = f"""Given the existing AI tool documentation below, suggest ONE tool category
+              that would add the MOST value to this AI infrastructure intelligence hub.
+
+              Existing tool docs:
+              {existing}
+
+              Categories to consider:
+              - vector-databases (Milvus, Chroma, pgvector, Vespa)
+              - ai-observability (Helicone, Braintrust, Weights & Biases)
+              - llm-security (Prompt Security, CalypsoAI, Robust Intelligence)
+              - ai-gateways (Kong AI Gateway, Azure AI Gateway)
+              - llm-orchestration (Semantic Kernel, DSPy, Instructor)
+              - rag-platforms (Vectara, Ragas, Unstructured)
+              - ai-agent-frameworks (LangGraph, Semantic Kernel Agents, OpenAI Assistants)
+              - mlops (BentoML, Seldon, Ray Serve)
+
+              Pick the category with the most new tools to cover. Avoid categories already well-covered.
+              Return ONLY: CATEGORY: <category-slug>"""
+
+              cat_response = client.messages.create(
+                  model="claude-sonnet-4-20250514",
+                  max_tokens=100,
+                  messages=[{"role": "user", "content": prompt_category}],
+              )
+              category = cat_response.content[0].text.strip().replace("CATEGORY:", "").strip()
+
+          # Map category to tool focus areas
+          category_tools = {
+              "vector-databases": "Milvus, Chroma, pgvector, Vespa, LanceDB",
+              "ai-observability": "Helicone, Braintrust, Weights & Biases, OpenLLMetry, Traceloop",
+              "llm-security": "Prompt Security, CalypsoAI, Robust Intelligence, LLM Guard, NeMo Guardrails",
+              "ai-gateways": "Kong AI Gateway, Azure AI Gateway, Cloudflare AI Gateway, AWS Bedrock Gateway",
+              "llm-orchestration": "Semantic Kernel, DSPy, Instructor, Marvin, LMQL",
+              "rag-platforms": "Vectara, Ragas, Unstructured, LlamaCloud, Embedchain",
+              "ai-agent-frameworks": "LangGraph, Semantic Kernel Agents, OpenAI Assistants API, Autogen Studio",
+              "mlops": "BentoML, Seldon Core, Ray Serve, Ollama, LocalAI",
+          }
+
+          tools_focus = category_tools.get(category, "emerging tools in this space")
+
+          prompt = f"""Write a technical documentation page about emerging AI infrastructure tools
+          in the category: {category}
+
+          Focus on these tools: {tools_focus}
+
+          Existing documentation (do not duplicate):
+          {existing}
+
+          Requirements:
+          - Frontmatter: title, sidebar_position ({existing_count + 1}), description, keywords
+          - Title format: "<Category Name> — Emerging Tools & Platforms"
+          - Structure:
+            ## Overview
+            Brief intro to the tool category and why it matters for AI infrastructure.
+
+            ## Tool Landscape
+            Table comparing the tools: | Tool | Type | License | Key Strength | Production Readiness |
+
+            ## <Tool 1 Name>
+            For each tool (cover 3-4 tools):
+            - What it does (2-3 sentences)
+            - Architecture highlights
+            - Key features (bullet list)
+            - When to use it
+
+            ## Selection Criteria
+            How to evaluate tools in this category.
+
+            ## Integration Patterns
+            Common deployment patterns (with code/config examples).
+
+            ## Recommended Tools
+            Table: | Tool | Documentation | Use Case |
+            Link to existing AIOpsVista tool docs where available.
+
+            ## Related Guides
+            Links to relevant architecture guides at /docs/ai-architecture/
+            Links to relevant comparisons at /docs/comparisons/
+
+          - 800-1200 words
+          - Tone: clear, practical, reference-quality — no marketing language
+          - Target audience: DevOps engineers evaluating AI infrastructure tools
+
+          Write the complete documentation page:"""
+
+          response = client.messages.create(
+              model="claude-sonnet-4-20250514",
+              max_tokens=3000,
+              messages=[{"role": "user", "content": prompt}],
+          )
+
+          content = response.content[0].text.strip()
+          slug = re.sub(r'[^a-z0-9]+', '-', category.lower()).strip('-')
+
+          # Check if file already exists — append -emerging if so
+          filepath = f"{docs_dir}/{slug}.md"
+          if os.path.exists(filepath):
+              slug = f"{slug}-emerging"
+              filepath = f"{docs_dir}/{slug}.md"
+
+          with open(filepath, "w") as f:
+              f.write(content + "\n")
+
+          # Extract title from frontmatter
+          title_match = re.search(r'title:\s*["\']?(.+?)["\']?\s*$', content, re.MULTILINE)
+          title = title_match.group(1) if title_match else f"Emerging {category} Tools"
+
+          with open(os.environ["GITHUB_ENV"], "a") as f:
+              f.write(f"DOC_FILE={filepath}\n")
+              f.write(f"DOC_TITLE={title}\n")
+              f.write(f"DOC_SLUG={slug}\n")
+              f.write(f"DOC_CATEGORY={category}\n")
+
+          print(f"Generated: {filepath}")
+          PYEOF
+
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v6
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: "docs(ai-tools): ${{ env.DOC_TITLE }}"
+          title: "🔍 Tool Discovery: ${{ env.DOC_TITLE }}"
+          body: |
+            ## AI-Generated Tool Discovery
+
+            **Title:** ${{ env.DOC_TITLE }}
+            **Category:** ${{ env.DOC_CATEGORY }}
+            **File:** `${{ env.DOC_FILE }}`
+
+            Emerging tool documentation generated by the AI content pipeline.
+            Reviews new and notable tools in the AI infrastructure ecosystem.
+
+            - [ ] Tool information is accurate and current
+            - [ ] Links to official documentation are correct
+            - [ ] No tools already covered in existing docs
+            - [ ] Comparison and architecture guide links are valid
+          branch: docs/tools-${{ env.DOC_SLUG }}
+          labels: documentation, ai-generated, ai-tools

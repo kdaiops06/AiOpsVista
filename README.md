@@ -105,13 +105,16 @@ In-depth technical guides across 8 categories:
 
 ## AI Content Automation
 
-Three GitHub Actions workflows generate content using the Claude API:
+Six GitHub Actions workflows generate content using the Claude API:
 
 | Workflow | Schedule | Output | Categories |
 |----------|----------|--------|------------|
 | Blog Generator | Weekly (Monday 9AM UTC) | Technical blog post → PR | AI Infrastructure, LLM Security, DevOps, AIOps |
+| Architecture Insights | Weekly (Wednesday 9AM UTC) | Architecture article → PR | LLM Infrastructure, AI Pipelines, Cost Optimization, RAG Operations |
 | Tech News | Weekly (Friday 9AM UTC) | Industry news roundup → PR | AI & DevOps |
 | Docs Updater | Monthly (1st at 9AM UTC) | Documentation page → PR | aiops, cloud-devops, ai-infra, ai-tools, ai-architecture, tool-setup, ai-learning, labs |
+| Tool Discovery | Monthly (15th at 9AM UTC) | Emerging tool doc → PR | vector-databases, ai-observability, llm-security, ai-gateways, rag-platforms, mlops |
+| Comparison Expansion | Monthly (1st at 10AM UTC) | Comparison page → PR | vector-databases, llm-observability, llm-security, ai-gateways, rag-frameworks |
 
 All AI-generated content goes through pull requests for human review before publishing.
 
@@ -124,8 +127,11 @@ AiOpsVista/
 ├── .github/workflows/
 │   ├── deploy.yml              # Build & deploy to GitHub Pages
 │   ├── ai-blog-generator.yml   # Weekly AI blog generation
+│   ├── ai-architecture-insights.yml # Weekly architecture articles
 │   ├── ai-tech-news.yml        # Weekly tech news roundup
-│   └── ai-docs-updater.yml     # Monthly docs update
+│   ├── ai-docs-updater.yml     # Monthly docs update
+│   ├── ai-tool-discovery.yml   # Monthly emerging tool docs
+│   └── ai-comparison-expansion.yml  # Monthly comparison pages
 ├── ARCHITECTURE.md             # System architecture document
 ├── website/
 │   ├── docusaurus.config.ts    # Site configuration

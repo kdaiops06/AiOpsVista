@@ -42,3 +42,8 @@ tech-news:
   label: Tech News
   description: Weekly roundups of DevOps, AIOps, and cloud infrastructure news.
   permalink: /tech-news
+
+ai-architecture:
+  label: AI Architecture
+  description: Architecture patterns, infrastructure design, and operational practices for production AI systems.
+  permalink: /ai-architecture

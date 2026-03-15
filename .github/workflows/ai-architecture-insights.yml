@@ -1,0 +1,196 @@
+name: AI Architecture Insights Generator
+
+on:
+  schedule:
+    # Run every Wednesday at 9:00 AM UTC
+    - cron: '0 9 * * 3'
+  workflow_dispatch:
+    inputs:
+      topic:
+        description: 'Architecture topic to write about'
+        required: true
+        type: string
+      tags:
+        description: 'Comma-separated tags (e.g., ai-operations,kubernetes)'
+        required: true
+        type: string
+
+permissions:
+  contents: write
+  pull-requests: write
+
+env:
+  BLOG_DIR: website/blog
+
+jobs:
+  generate-architecture-insights:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install anthropic pyyaml
+
+      - name: List existing content
+        id: existing
+        run: |
+          echo "## Existing blog posts:" > /tmp/existing_content.txt
+          ls -1 website/blog/*.md 2>/dev/null | head -20 >> /tmp/existing_content.txt || true
+          echo "## Existing architecture guides:" >> /tmp/existing_content.txt
+          ls -1 website/docs/ai-architecture/*.md 2>/dev/null >> /tmp/existing_content.txt || true
+          echo "## Existing comparisons:" >> /tmp/existing_content.txt
+          ls -1 website/docs/comparisons/*.md 2>/dev/null >> /tmp/existing_content.txt || true
+
+      - name: Generate architecture insights post
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          INPUT_TOPIC: ${{ github.event.inputs.topic || '' }}
+          INPUT_TAGS: ${{ github.event.inputs.tags || '' }}
+        run: |
+          python << 'PYEOF'
+          import anthropic
+          import os
+          import datetime
+          import re
+
+          client = anthropic.Anthropic()
+          today = datetime.date.today().isoformat()
+
+          # Read existing content listing to avoid duplicates
+          existing = ""
+          try:
+              with open("/tmp/existing_content.txt") as f:
+                  existing = f.read()
+          except FileNotFoundError:
+              pass
+
+          topic = os.environ.get("INPUT_TOPIC", "")
+          tags = os.environ.get("INPUT_TAGS", "")
+
+          if not topic:
+              prompt_topic = f"""Pick ONE specific, actionable blog post topic about AI infrastructure architecture.
+              The article should focus on operational patterns, architecture decisions, and infrastructure practices
+              for production AI systems.
+
+              Topic areas (pick one):
+              - Scaling LLM Infrastructure on Kubernetes
+              - Observability for AI Pipelines (tracing, metrics, logging)
+              - Cost Optimization for Vector Databases
+              - Monitoring RAG Systems in Production
+              - AI Gateway Architecture Patterns
+              - Multi-Model LLM Routing Strategies
+              - GPU Cluster Scheduling and Resource Management
+              - LLM Security in Production Environments
+              - Data Pipeline Architecture for AI Training
+              - AI Agent Infrastructure Patterns
+              - Prompt Injection Defense at the Infrastructure Layer
+              - Production-Grade LLM Evaluation Pipelines
+              - Embedding Pipeline Architecture for RAG
+              - AI Platform Engineering: Building Internal AI Platforms
+
+              Existing content (avoid duplicating these):
+              {existing}
+
+              Return ONLY the topic title and 2-3 relevant tags.
+              Valid tags: devops, aiops, cloud, platform-engineering, kubernetes, observability, ai-operations, terraform
+              Format: TOPIC: <title>
+              TAGS: <tag1>,<tag2>"""
+
+              topic_response = client.messages.create(
+                  model="claude-sonnet-4-20250514",
+                  max_tokens=200,
+                  messages=[{"role": "user", "content": prompt_topic}],
+              )
+              lines = topic_response.content[0].text.strip().split("\n")
+              topic = lines[0].replace("TOPIC:", "").strip()
+              tags = lines[1].replace("TAGS:", "").strip() if len(lines) > 1 else "ai-operations"
+
+          slug = re.sub(r'[^a-z0-9]+', '-', topic.lower()).strip('-')[:60]
+          tag_list = [t.strip() for t in tags.split(",")]
+          tags_yaml = ", ".join(tag_list)
+
+          prompt = f"""Write a technical blog post about: {topic}
+
+          This is an AI infrastructure architecture insights article. Focus on infrastructure patterns,
+          architecture decisions, and operational practices — NOT marketing or product promotion.
+
+          Requirements:
+          - 1200-1800 words
+          - Target audience: mid-senior DevOps engineers, SREs, and AI platform teams
+          - Include practical code examples, YAML configs, or architecture diagrams (ASCII) where relevant
+          - Use Markdown with proper headings (h2, h3)
+          - Start with a compelling intro paragraph (this appears in blog listing)
+          - Add <!-- truncate --> after the intro paragraph
+          - Structure: Problem → Architecture → Implementation → Operational Considerations → Key Takeaways
+          - Include links to relevant AIOpsVista resources where appropriate:
+            - Architecture guides at /docs/category/ai-architecture
+            - AI tool docs at /docs/category/ai-tools
+            - Tool comparisons at /docs/category/tool-comparisons
+            - Comparisons at /comparisons
+          - End with a call-to-action linking to /contact for AI infrastructure consulting
+          - Tone: professional, practical, opinionated — written for practitioners
+          - Do NOT include the frontmatter — I will add it
+
+          Write the blog post content only (no frontmatter):"""
+
+          response = client.messages.create(
+              model="claude-sonnet-4-20250514",
+              max_tokens=4000,
+              messages=[{"role": "user", "content": prompt}],
+          )
+
+          content = response.content[0].text.strip()
+          description = content.split("\n")[0][:155].replace('"', "'")
+
+          frontmatter = f"""---
+          title: "{topic}"
+          slug: {slug}
+          authors: [aiopsvista]
+          tags: [{tags_yaml}]
+          description: "{description}"
+          ---"""
+
+          frontmatter = "\n".join(line.strip() for line in frontmatter.split("\n"))
+          full_post = f"{frontmatter}\n\n{content}\n"
+
+          filename = f"{today}-{slug}.md"
+          filepath = os.path.join(os.environ.get("BLOG_DIR", "website/blog"), filename)
+
+          with open(filepath, "w") as f:
+              f.write(full_post)
+
+          with open(os.environ["GITHUB_ENV"], "a") as f:
+              f.write(f"POST_FILE={filepath}\n")
+              f.write(f"POST_TITLE={topic}\n")
+              f.write(f"POST_SLUG={slug}\n")
+
+          print(f"Generated: {filepath}")
+          PYEOF
+
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v6
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: "blog: architecture insights — ${{ env.POST_TITLE }}"
+          title: "🏗️ Architecture Insights: ${{ env.POST_TITLE }}"
+          body: |
+            ## AI-Generated Architecture Insights
+
+            **Title:** ${{ env.POST_TITLE }}
+            **File:** `${{ env.POST_FILE }}`
+
+            Weekly architecture insights article generated by the AI content pipeline.
+            Targets DevOps engineers and AI platform teams.
+
+            - [ ] Architecture patterns are accurate
+            - [ ] Code examples and configs are correct
+            - [ ] Internal links resolve correctly
+            - [ ] No marketing language — practitioner-focused tone
+          branch: blog/architecture-${{ env.POST_SLUG }}
+          labels: blog, ai-generated, architecture

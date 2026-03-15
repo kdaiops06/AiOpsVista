@@ -1,0 +1,306 @@
+name: AI Comparison Expansion Generator
+
+on:
+  schedule:
+    # Run on the 1st of every month at 10:00 AM UTC (1 hour after docs updater)
+    - cron: '0 10 1 * *'
+  workflow_dispatch:
+    inputs:
+      comparison_category:
+        description: 'Comparison category to expand'
+        required: true
+        type: choice
+        options:
+          - vector-databases
+          - llm-observability
+          - llm-security
+          - ai-gateways
+          - rag-frameworks
+          - ai-agent-frameworks
+          - llm-orchestration
+
+permissions:
+  contents: write
+  pull-requests: write
+
+env:
+  COMPARISONS_DIR: website/docs/comparisons
+
+jobs:
+  generate-comparison:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install anthropic pyyaml
+
+      - name: Catalog existing comparisons
+        run: |
+          echo "## Existing comparison pages (React):" > /tmp/existing_comparisons.txt
+          grep -o '"[a-z-]*-vs-[a-z-]*"' website/src/pages/comparisons/index.tsx 2>/dev/null >> /tmp/existing_comparisons.txt || true
+          echo "" >> /tmp/existing_comparisons.txt
+          echo "## Existing comparison docs (Markdown):" >> /tmp/existing_comparisons.txt
+          for f in website/docs/comparisons/*.md; do
+            basename "$f" >> /tmp/existing_comparisons.txt
+          done
+          echo "" >> /tmp/existing_comparisons.txt
+          echo "## Existing tool docs:" >> /tmp/existing_comparisons.txt
+          ls -1 website/docs/ai-tools/*.md >> /tmp/existing_comparisons.txt 2>/dev/null || true
+
+      - name: Generate comparison page
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          COMPARISON_CATEGORY: ${{ github.event.inputs.comparison_category || '' }}
+        run: |
+          python << 'PYEOF'
+          import anthropic
+          import os
+          import re
+          import glob
+
+          client = anthropic.Anthropic()
+          comparisons_dir = os.environ.get("COMPARISONS_DIR", "website/docs/comparisons")
+          category = os.environ.get("COMPARISON_CATEGORY", "")
+
+          # Read existing comparisons
+          existing = ""
+          try:
+              with open("/tmp/existing_comparisons.txt") as f:
+                  existing = f.read()
+          except FileNotFoundError:
+              pass
+
+          existing_count = len(glob.glob(f"{comparisons_dir}/*.md"))
+
+          if not category:
+              prompt_category = f"""Given the existing comparisons below, suggest ONE comparison category
+              that would add the MOST value for developers evaluating AI infrastructure tools.
+
+              Existing comparisons:
+              {existing}
+
+              Possible categories and comparison pairs:
+              - vector-databases: Milvus vs Qdrant, Chroma vs Weaviate, pgvector vs Pinecone
+              - llm-observability: Helicone vs Langfuse, Arize vs Weights & Biases
+              - llm-security: NeMo Guardrails vs Lakera, LLM Guard vs Rebuff
+              - ai-gateways: Kong AI Gateway vs Portkey, Cloudflare AI vs LiteLLM
+              - rag-frameworks: Vectara vs Haystack, LlamaCloud vs LangChain
+              - ai-agent-frameworks: LangGraph vs CrewAI, Autogen vs LangGraph
+              - llm-orchestration: DSPy vs LangChain, Semantic Kernel vs LlamaIndex
+
+              Pick the category with the highest developer search demand that is NOT already covered.
+              Return ONLY: CATEGORY: <category-slug>"""
+
+              cat_response = client.messages.create(
+                  model="claude-sonnet-4-20250514",
+                  max_tokens=100,
+                  messages=[{"role": "user", "content": prompt_category}],
+              )
+              category = cat_response.content[0].text.strip().replace("CATEGORY:", "").strip()
+
+          # Map category to comparison pairs
+          comparison_pairs = {
+              "vector-databases": [
+                  ("Milvus", "Qdrant"),
+                  ("Chroma", "Weaviate"),
+                  ("pgvector", "Pinecone"),
+              ],
+              "llm-observability": [
+                  ("Helicone", "Langfuse"),
+                  ("Arize", "Weights & Biases"),
+              ],
+              "llm-security": [
+                  ("NeMo Guardrails", "Lakera Guard"),
+                  ("LLM Guard", "Rebuff"),
+              ],
+              "ai-gateways": [
+                  ("Kong AI Gateway", "Portkey"),
+                  ("Cloudflare AI Gateway", "LiteLLM"),
+              ],
+              "rag-frameworks": [
+                  ("Vectara", "Haystack"),
+                  ("LlamaCloud", "LangChain"),
+              ],
+              "ai-agent-frameworks": [
+                  ("LangGraph", "CrewAI"),
+                  ("AutoGen", "LangGraph"),
+              ],
+              "llm-orchestration": [
+                  ("DSPy", "LangChain"),
+                  ("Semantic Kernel", "LlamaIndex"),
+              ],
+          }
+
+          pairs = comparison_pairs.get(category, [("Tool A", "Tool B")])
+
+          # Find first pair not already covered
+          tool_a, tool_b = pairs[0]
+          for a, b in pairs:
+              slug_check = f"{re.sub(r'[^a-z0-9]+', '-', a.lower()).strip('-')}-vs-{re.sub(r'[^a-z0-9]+', '-', b.lower()).strip('-')}"
+              if slug_check not in existing.lower():
+                  tool_a, tool_b = a, b
+                  break
+
+          slug = f"{re.sub(r'[^a-z0-9]+', '-', tool_a.lower()).strip('-')}-vs-{re.sub(r'[^a-z0-9]+', '-', tool_b.lower()).strip('-')}"
+          filepath = f"{comparisons_dir}/{slug}.md"
+
+          # Skip if already exists
+          if os.path.exists(filepath):
+              print(f"Comparison {slug} already exists, skipping.")
+              with open(os.environ["GITHUB_ENV"], "a") as f:
+                  f.write(f"SKIP=true\n")
+              exit(0)
+
+          prompt = f"""Write a technical comparison page: {tool_a} vs {tool_b}
+
+          This is for an AI infrastructure intelligence hub targeting DevOps engineers and AI platform teams.
+
+          Existing comparisons (for cross-linking):
+          {existing}
+
+          Requirements:
+          - Frontmatter with: sidebar_position ({existing_count + 1}), title, description, keywords
+          - Title format: "{tool_a} vs {tool_b}: <Descriptive Subtitle>"
+          - Follow this EXACT structure:
+
+          # {tool_a} vs {tool_b}
+          **One-sentence positioning statement.**
+
+          ## Overview
+          2-3 paragraphs comparing the tools at a high level.
+
+          ## Architecture Diagram
+          ASCII diagram showing how each tool fits into an AI infrastructure stack.
+
+          ## Architecture Differences
+          Side-by-side explanation of core architecture approaches.
+
+          ## Feature Comparison
+          | Feature | {tool_a} | {tool_b} |
+          Table with 10-12 key features.
+
+          ## Deployment Considerations
+          How each tool is deployed, operated, and scaled.
+
+          ## Security Capabilities
+          | Capability | {tool_a} | {tool_b} |
+          Table covering auth, encryption, compliance, etc.
+
+          ## Recommended Use Cases
+          When to choose each tool, with specific scenarios.
+
+          ## Recommended Tools
+          | Tool | Documentation | Use Case |
+          Links to relevant AIOpsVista tool docs (/docs/ai-tools/).
+
+          ## Related Guides
+          Links to architecture guides (/docs/ai-architecture/) and other comparisons (/docs/comparisons/).
+
+          ## Related Comparisons
+          Links to other comparison pages that readers may find useful.
+
+          - 800-1200 words
+          - Tone: objective, technical, practitioner-focused — no marketing language
+          - Include concrete technical differences, not just feature lists
+
+          Write the complete comparison page:"""
+
+          response = client.messages.create(
+              model="claude-sonnet-4-20250514",
+              max_tokens=3000,
+              messages=[{"role": "user", "content": prompt}],
+          )
+
+          content = response.content[0].text.strip()
+
+          with open(filepath, "w") as f:
+              f.write(content + "\n")
+
+          title = f"{tool_a} vs {tool_b}"
+          title_match = re.search(r'title:\s*["\']?(.+?)["\']?\s*$', content, re.MULTILINE)
+          if title_match:
+              title = title_match.group(1)
+
+          with open(os.environ["GITHUB_ENV"], "a") as f:
+              f.write(f"COMP_FILE={filepath}\n")
+              f.write(f"COMP_TITLE={title}\n")
+              f.write(f"COMP_SLUG={slug}\n")
+              f.write(f"COMP_CATEGORY={category}\n")
+              f.write(f"SKIP=false\n")
+
+          print(f"Generated: {filepath}")
+          PYEOF
+
+      - name: Update comparisons index
+        if: env.SKIP != 'true'
+        run: |
+          python << 'PYEOF'
+          import os
+          import re
+
+          index_path = "website/docs/comparisons/getting-started.md"
+          comp_file = os.environ.get("COMP_FILE", "")
+          comp_title = os.environ.get("COMP_TITLE", "")
+          comp_slug = os.environ.get("COMP_SLUG", "")
+          comp_category = os.environ.get("COMP_CATEGORY", "")
+
+          if not comp_file or not os.path.exists(index_path):
+              print("No comparison file or index found, skipping index update.")
+              exit(0)
+
+          with open(index_path) as f:
+              index_content = f.read()
+
+          # Add link to the new comparison before the "How to Use" section
+          new_link = f"- [{comp_title}](./{comp_slug}.md)"
+
+          if comp_slug not in index_content:
+              # Insert before "## How to Use" if it exists, otherwise append
+              if "## How to Use" in index_content:
+                  index_content = index_content.replace(
+                      "## How to Use",
+                      f"{new_link}\n\n## How to Use"
+                  )
+              else:
+                  index_content += f"\n{new_link}\n"
+
+              with open(index_path, "w") as f:
+                  f.write(index_content)
+
+              print(f"Updated index with: {comp_title}")
+          else:
+              print(f"Comparison {comp_slug} already in index.")
+          PYEOF
+
+      - name: Create Pull Request
+        if: env.SKIP != 'true'
+        uses: peter-evans/create-pull-request@v6
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: "docs(comparisons): ${{ env.COMP_TITLE }}"
+          title: "⚖️ New Comparison: ${{ env.COMP_TITLE }}"
+          body: |
+            ## AI-Generated Tool Comparison
+
+            **Title:** ${{ env.COMP_TITLE }}
+            **Category:** ${{ env.COMP_CATEGORY }}
+            **File:** `${{ env.COMP_FILE }}`
+
+            Comparison page generated by the AI content pipeline.
+            Expands the tool comparison knowledge base for developer evaluation workflows.
+
+            - [ ] Tool capabilities are accurately represented
+            - [ ] Feature comparison table is fair and balanced
+            - [ ] Architecture diagrams are correct
+            - [ ] Security capabilities section is accurate
+            - [ ] Cross-links to existing docs are valid
+            - [ ] Comparisons index page updated correctly
+          branch: docs/comparison-${{ env.COMP_SLUG }}
+          labels: documentation, ai-generated, comparisons
