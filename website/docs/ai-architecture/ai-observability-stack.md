@@ -188,9 +188,9 @@ groups:
       # Quality degradation — catch before users complain
       - alert: LLMQualityDrop
         expr: |
-          avg_over_time(llm_quality_score[1h]) < 0.7
+          (rate(llm_quality_score_sum[1h]) / rate(llm_quality_score_count[1h])) < 0.7
           and
-          avg_over_time(llm_quality_score[24h]) > 0.8
+          (rate(llm_quality_score_sum[24h]) / rate(llm_quality_score_count[24h])) > 0.8
         for: 30m
         labels:
           severity: warning
@@ -210,7 +210,7 @@ groups:
 
       # Retrieval quality — RAG returning irrelevant docs
       - alert: LLMRetrievalQualityLow
-        expr: avg(llm_retrieval_relevance_score) < 0.5
+        expr: rate(llm_retrieval_relevance_score_sum[1h]) / rate(llm_retrieval_relevance_score_count[1h]) < 0.5
         for: 20m
         labels:
           severity: warning
