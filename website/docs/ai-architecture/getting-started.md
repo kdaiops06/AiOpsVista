@@ -14,8 +14,11 @@ This section covers the architecture patterns that separate proof-of-concept AI 
 
 - **Secure LLM Pipelines** — Defense-in-depth for every stage of the LLM request lifecycle
 - **AI Observability Stack** — Monitoring, tracing, and evaluation for LLM applications
-- **DevOps for AI Agents** — CI/CD, testing, and deployment patterns for agent systems
+- **DevOps for AI Systems** — CI/CD, testing, and deployment patterns for AI applications
 - **Enterprise AI Security** — Governance, compliance, and risk management for AI
+- **Prompt Injection Defense** — Multi-layer architecture for detecting and blocking injection attacks
+- **AI Infrastructure on Kubernetes** — GPU scheduling, model serving, and inference autoscaling
+- **LLM Monitoring and Tracing** — OpenTelemetry instrumentation, SLIs/SLOs, and alerting patterns
 
 ## Why Architecture Matters
 
@@ -46,10 +49,13 @@ When designing AI infrastructure, evaluate every component against these criteri
 |---|---|
 | [Secure LLM Pipelines](./secure-llm-pipelines) | Defense-in-depth architecture for LLM applications |
 | [AI Observability Stack](./ai-observability-stack) | Monitoring, tracing, and evaluation for production AI |
-| [DevOps for AI Agents](./devops-for-ai-agents) | CI/CD, testing, and deployment for agent systems |
+| [DevOps for AI Systems](./devops-for-ai-agents) | CI/CD, testing, and deployment for AI applications |
 | [Enterprise AI Security](./enterprise-ai-security) | Governance, compliance, and risk management |
 | [Production RAG Systems](./production-rag-systems) | Retrieval architecture, hybrid search, re-ranking, caching |
 | [AI Gateway Architecture](./ai-gateway-architecture) | Centralized LLM routing, security, and cost management |
+| [Prompt Injection Defense](./prompt-injection-defense) | Multi-layer defense against prompt injection and jailbreak attacks |
+| [AI Infrastructure on Kubernetes](./ai-infrastructure-kubernetes) | GPU scheduling, model serving, inference autoscaling on K8s |
+| [LLM Monitoring and Tracing](./llm-monitoring-tracing) | OpenTelemetry instrumentation, SLIs/SLOs, alerting, dashboards |
 
 ## Related Resources
 

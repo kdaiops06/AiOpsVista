@@ -242,11 +242,63 @@ Essential governance policies every enterprise should define:
 4. **Incident Response Policy** — AI-specific incident classification, escalation, and remediation
 5. **Quality Assurance Policy** — Evaluation frequency, accuracy thresholds, human review requirements
 
+### Shadow AI Detection and Prevention
+
+Unmanaged AI usage is one of the highest governance risks. Detect and redirect shadow AI:
+
+```python
+# Network-level shadow AI detection
+KNOWN_AI_ENDPOINTS = [
+    "api.openai.com",
+    "api.anthropic.com",
+    "generativelanguage.googleapis.com",
+    "api.cohere.ai",
+    "api.mistral.ai",
+]
+
+def detect_shadow_ai_usage(network_logs: list[dict]) -> list[dict]:
+    """Identify direct AI API calls that bypass the corporate gateway."""
+    violations = []
+    for log in network_logs:
+        destination = log.get("destination_host", "")
+        source_app = log.get("source_application", "")
+        
+        if any(endpoint in destination for endpoint in KNOWN_AI_ENDPOINTS):
+            # Check if traffic went through the approved AI gateway
+            if not log.get("via_ai_gateway", False):
+                violations.append({
+                    "timestamp": log["timestamp"],
+                    "source": source_app,
+                    "destination": destination,
+                    "action": "alert_security_team",
+                })
+    return violations
+```
+
+**Prevention strategies:**
+- Route all AI API traffic through a centralized [AI gateway](./ai-gateway-architecture)
+- Block direct access to known AI API endpoints at the network level
+- Provide approved, easy-to-use AI tools so employees don't need workarounds
+- Conduct quarterly shadow AI audits
+
+### AI Incident Classification
+
+Define severity levels specific to AI incidents:
+
+| Severity | Definition | Example | Response Time |
+|---|---|---|---|
+| **SEV-1** | Data breach via AI or safety-critical failure | PII leaked through LLM response, autonomous action caused harm | 15 minutes |
+| **SEV-2** | Significant quality or compliance failure | Hallucination in regulated context, compliance control bypass | 1 hour |
+| **SEV-3** | Moderate impact | Cost spike, quality degradation, unauthorized model usage | 4 hours |
+| **SEV-4** | Low impact | Minor quality issues, shadow AI detection, process violations | Next business day |
+
 ## Related
 
+- [Prompt Injection Defense Architecture →](./prompt-injection-defense)
 - [Secure LLM Pipelines →](./secure-llm-pipelines)
 - [AI Observability Stack →](./ai-observability-stack)
 - [AI Gateway Architecture →](./ai-gateway-architecture)
+- [LLM Monitoring and Tracing →](./llm-monitoring-tracing)
 - [LLM Security Tools →](/docs/ai-tools/llm-security-tools)
 - [Lakera Guard Review →](/tools/lakera-guard-review)
 - [Lakera vs Guardrails AI →](/comparisons/lakera-vs-guardrails)
