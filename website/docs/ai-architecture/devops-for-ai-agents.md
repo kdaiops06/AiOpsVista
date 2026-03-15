@@ -322,10 +322,13 @@ Every prompt change triggers:
 
 ## Related
 
+- [AI Agent Infrastructure →](./ai-agent-infrastructure)
+- [LLM Evaluation & Testing →](./llm-evaluation-testing)
 - [Secure LLM Pipelines →](./secure-llm-pipelines)
 - [AI Observability Stack →](./ai-observability-stack)
 - [AI Gateway Architecture →](./ai-gateway-architecture)
 - [AI Agent Frameworks →](/docs/ai-tools/ai-agent-frameworks)
 - [CrewAI vs AutoGen →](/comparisons/crewai-vs-autogen)
 - [Kubernetes Operations →](/docs/cloud-devops/kubernetes-operations)
+- [Architecture Playbooks Index →](./architecture-playbooks)
 - [AI Infrastructure Consulting →](/services)

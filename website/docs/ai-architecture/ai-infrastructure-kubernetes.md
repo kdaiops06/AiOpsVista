@@ -406,9 +406,12 @@ spec:
 
 - [AI Gateway Architecture →](./ai-gateway-architecture)
 - [AI Observability Stack →](./ai-observability-stack)
+- [AI Cost Optimization →](./ai-cost-optimization)
+- [Multi-Model LLM Routing →](./multi-model-llm-routing)
 - [LLM Monitoring and Tracing →](./llm-monitoring-tracing)
 - [RAG Platforms and Vector Databases →](/docs/ai-tools/rag-platforms)
 - [AI Observability Tools →](/docs/ai-tools/ai-observability-tools)
 - [Pinecone vs Weaviate →](/comparisons/pinecone-vs-weaviate)
 - [Kubernetes Operations →](/docs/cloud-devops/kubernetes-operations)
+- [Architecture Playbooks Index →](./architecture-playbooks)
 - [AI Infrastructure Consulting →](/services)

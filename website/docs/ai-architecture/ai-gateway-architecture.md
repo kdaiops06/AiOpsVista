@@ -349,9 +349,12 @@ gateway:
 
 - [AI Gateways (Tool Directory) →](/docs/ai-tools/ai-gateways)
 - [SlashLLM →](/docs/ai-tools/slashllm)
+- [Secure LLM API Gateway Deployment →](./secure-llm-api-gateway)
+- [Multi-Model LLM Routing →](./multi-model-llm-routing)
 - [Secure LLM Pipelines →](./secure-llm-pipelines)
 - [AI Observability Stack →](./ai-observability-stack)
 - [Enterprise AI Security →](./enterprise-ai-security)
 - [LLM Security Tools →](/docs/ai-tools/llm-security-tools)
 - [AI Observability Tools →](/docs/ai-tools/ai-observability-tools)
+- [Architecture Playbooks Index →](./architecture-playbooks)
 - [AI Infrastructure Consulting →](/services)

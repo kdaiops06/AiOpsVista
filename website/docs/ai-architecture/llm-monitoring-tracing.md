@@ -431,9 +431,12 @@ A production LLM monitoring dashboard should include these panels:
 ## Related
 
 - [AI Observability Stack →](./ai-observability-stack)
+- [AI Cost Optimization →](./ai-cost-optimization)
+- [LLM Evaluation & Testing →](./llm-evaluation-testing)
 - [AI Infrastructure on Kubernetes →](./ai-infrastructure-kubernetes)
 - [AI Gateway Architecture →](./ai-gateway-architecture)
 - [AI Observability Tools →](/docs/ai-tools/ai-observability-tools)
 - [Langfuse Review →](/tools/langfuse-review)
 - [Langfuse vs Arize →](/comparisons/langfuse-vs-arize)
+- [Architecture Playbooks Index →](./architecture-playbooks)
 - [AI Infrastructure Consulting →](/services)

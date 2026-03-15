@@ -269,6 +269,8 @@ llm_retrieval_relevance = Histogram(
 ## Related
 
 - [LLM Monitoring and Tracing →](./llm-monitoring-tracing)
+- [AI Cost Optimization →](./ai-cost-optimization)
+- [LLM Evaluation & Testing →](./llm-evaluation-testing)
 - [Secure LLM Pipelines →](./secure-llm-pipelines)
 - [Production RAG Systems →](./production-rag-systems)
 - [AI Gateway Architecture →](./ai-gateway-architecture)
@@ -276,4 +278,5 @@ llm_retrieval_relevance = Histogram(
 - [Langfuse Review →](/tools/langfuse-review)
 - [Langfuse vs Arize Phoenix →](/comparisons/langfuse-vs-arize)
 - [Observability Stack Blog Post →](/blog/complete-observability-stack-2026)
+- [Architecture Playbooks Index →](./architecture-playbooks)
 - [AI Infrastructure Consulting →](/services)

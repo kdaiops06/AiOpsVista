@@ -19,6 +19,12 @@ This section covers the architecture patterns that separate proof-of-concept AI 
 - **Prompt Injection Defense** — Multi-layer architecture for detecting and blocking injection attacks
 - **AI Infrastructure on Kubernetes** — GPU scheduling, model serving, and inference autoscaling
 - **LLM Monitoring and Tracing** — OpenTelemetry instrumentation, SLIs/SLOs, and alerting patterns
+- **AI Agent Infrastructure** — Multi-agent orchestration, tool execution, memory systems, and guardrails
+- **Secure LLM API Gateway Deployment** — Production gateway deployment with multi-tenant isolation and compliance
+- **Multi-Model LLM Routing** — Cost-quality routing, failover strategies, and semantic caching
+- **AI Cost Optimization** — Token budget management, model tiering, and cost governance
+- **LLM Evaluation & Testing** — Automated quality benchmarks, regression testing, and CI/CD integration
+- **AI Data Pipeline Architecture** — Document processing, embedding generation, and vector ingestion
 
 ## Why Architecture Matters
 
@@ -53,6 +59,16 @@ When designing AI infrastructure, evaluate every component against these criteri
 | [Enterprise AI Security](./enterprise-ai-security) | Governance, compliance, and risk management |
 | [Production RAG Systems](./production-rag-systems) | Retrieval architecture, hybrid search, re-ranking, caching |
 | [AI Gateway Architecture](./ai-gateway-architecture) | Centralized LLM routing, security, and cost management |
+| [Prompt Injection Defense](./prompt-injection-defense) | Multi-layer defense against prompt injection attacks |
+| [AI Infrastructure on Kubernetes](./ai-infrastructure-kubernetes) | GPU scheduling, model serving, and autoscaling |
+| [LLM Monitoring and Tracing](./llm-monitoring-tracing) | OpenTelemetry instrumentation, SLIs/SLOs, alerting |
+| [AI Agent Infrastructure](./ai-agent-infrastructure) | Multi-agent orchestration, tool execution, guardrails |
+| [Secure LLM API Gateway](./secure-llm-api-gateway) | Production gateway deployment, multi-tenant isolation |
+| [Multi-Model LLM Routing](./multi-model-llm-routing) | Cost-quality routing, failover, semantic caching |
+| [AI Cost Optimization](./ai-cost-optimization) | Token budgets, model tiering, cost governance |
+| [LLM Evaluation & Testing](./llm-evaluation-testing) | Quality benchmarks, regression testing, CI/CD gates |
+| [AI Data Pipeline](./ai-data-pipeline) | Document processing, embeddings, vector ingestion |
+| [Architecture Playbooks Index](./architecture-playbooks) | Central index of all architecture playbooks |
 
 ## Related Resources
 
