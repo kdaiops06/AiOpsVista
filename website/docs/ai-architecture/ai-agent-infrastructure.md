@@ -15,7 +15,7 @@ This playbook covers the infrastructure architecture required to deploy autonomo
 
 The core challenge: agents are non-deterministic systems that make decisions at runtime. Traditional request-response infrastructure does not handle the variable-length execution, branching logic, and failure modes that agents introduce. Production agent infrastructure must account for execution timeouts, tool call failures, cost runaway, and safety guardrails — all while maintaining observability into each decision step.
 
-## Architecture Diagram Explanation
+## Architecture Diagram
 
 ```
 ┌─────────────────────────────────────────────────────────────────┐
@@ -79,7 +79,7 @@ The core challenge: agents are non-deterministic systems that make decisions at 
 | **Message Queue** | Async task distribution for multi-agent | Redis Streams, RabbitMQ, NATS |
 | **API Gateway** | Auth, rate limiting, request routing | Kong, Envoy, SlashLLM gateway |
 
-## Recommended Tool Stack
+## Recommended Tools
 
 ### Agent Orchestration
 
@@ -144,7 +144,7 @@ The core challenge: agents are non-deterministic systems that make decisions at 
 - **Code execution sandboxing** — Any agent that executes code must run in an isolated environment (containers, microVMs) with no network access to internal systems unless explicitly allowed.
 - **Guardrail enforcement** — Apply [prompt injection defense](/docs/ai-architecture/prompt-injection-defense) at the gateway layer before tasks reach the agent orchestration engine.
 
-## Related
+## Related Guides
 
 - [AI Agent Frameworks: CrewAI vs AutoGen →](/docs/ai-tools/ai-agent-frameworks)
 - [DevOps for AI Systems →](/docs/ai-architecture/devops-for-ai-agents)

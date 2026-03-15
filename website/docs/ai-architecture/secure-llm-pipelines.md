@@ -22,7 +22,7 @@ LLM applications introduce attack surfaces that traditional application security
 | **Indirect injection** | Malicious content in retrieved documents manipulates LLM | Emerging |
 | **Model denial of service** | Adversarial inputs cause excessive token usage | Emerging |
 
-## Architecture: Defense in Depth
+## Architecture Diagram
 
 ```
 User Input
@@ -315,7 +315,18 @@ def safe_llm_call(prompt: str) -> str:
 - [ ] Conduct regular red team exercises against the pipeline
 - [ ] Document compliance controls for audit
 
-## Related
+## Recommended Tools
+
+| Category | Tool | Purpose |
+|----------|------|---------|
+| **Security Gateway** | [SlashLLM →](/docs/ai-tools/slashllm) | End-to-end LLM pipeline security |
+| **Injection Defense** | [Lakera Guard →](/tools/lakera-guard-review) | Real-time prompt injection scanning |
+| **Security** | [LLM Security Tools →](/docs/ai-tools/llm-security-tools) | Comprehensive security tool directory |
+| **Observability** | [Langfuse →](/tools/langfuse-review) | Security event tracing and monitoring |
+| **Comparison** | [Lakera vs Guardrails AI →](/comparisons/lakera-vs-guardrails) | Security tool evaluation |
+| **Comparison** | [SlashLLM vs Lakera Guard →](/comparisons/slashllm-vs-lakera) | Pipeline security comparison |
+
+## Related Guides
 
 - [Prompt Injection Defense Architecture →](./prompt-injection-defense)
 - [Enterprise AI Security →](./enterprise-ai-security)

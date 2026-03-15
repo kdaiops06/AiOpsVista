@@ -15,7 +15,7 @@ This playbook covers the infrastructure architecture for AI-specific data pipeli
 
 The core challenge: AI data pipelines have unique requirements that traditional data tools handle poorly. Documents must be chunked with semantic awareness. Embeddings must be generated at scale without excessive API costs. Vector indexes must be updated without downtime. Data quality issues (stale content, duplicates, incorrect metadata) directly degrade AI system output quality — unlike traditional analytics where bad data produces wrong dashboards, bad AI data produces hallucinations.
 
-## Architecture Diagram Explanation
+## Architecture Diagram
 
 ```
 ┌─────────────────────────────────────────────────────────────────┐
@@ -88,7 +88,7 @@ The core challenge: AI data pipelines have unique requirements that traditional 
 | **Quality monitor** | Track data quality metrics and freshness | Custom + Prometheus, Great Expectations |
 | **Orchestrator** | Schedule and coordinate pipeline stages | Apache Airflow, Prefect, Dagster |
 
-## Recommended Tool Stack
+## Recommended Tools
 
 ### Document Processing
 
@@ -173,7 +173,7 @@ for i, chunk in enumerate(chunks):
 - **Data poisoning** — Adversaries with access to source documents can inject malicious content that propagates through the pipeline into the RAG system. Implement content validation and source integrity checks.
 - **Stale data risk** — Outdated information in the vector store causes hallucination-like behavior in RAG systems. Implement TTL (time-to-live) metadata and automated freshness monitoring.
 
-## Related
+## Related Guides
 
 - [Production RAG Systems →](/docs/ai-architecture/production-rag-systems)
 - [Vector Databases →](/docs/ai-tools/vector-databases)

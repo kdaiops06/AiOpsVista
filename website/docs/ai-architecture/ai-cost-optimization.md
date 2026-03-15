@@ -15,7 +15,7 @@ This playbook covers the architecture for managing and optimizing AI infrastruct
 
 Three cost domains require distinct strategies: **LLM API costs** (token-based pricing from cloud providers), **compute costs** (GPU/CPU for self-hosted models and inference servers), and **storage costs** (vector databases, embedding stores, model artifacts).
 
-## Architecture Diagram Explanation
+## Architecture Diagram
 
 ```
 ┌─────────────────────────────────────────────────────────────────┐
@@ -71,7 +71,7 @@ Three cost domains require distinct strategies: **LLM API costs** (token-based p
 | **GPU autoscaler** | Right-size self-hosted model compute | KEDA, Kubernetes HPA with custom metrics |
 | **Vector DB optimizer** | Right-size vector storage and indexes | Index tuning, quantization, tiered storage |
 
-## Recommended Tool Stack
+## Recommended Tools
 
 ### Cost Visibility
 
@@ -145,7 +145,7 @@ Three cost domains require distinct strategies: **LLM API costs** (token-based p
 - **Model downgrade safety** — When routing to cheaper models for cost savings, validate that model output quality is sufficient. Use automated evaluation ([LangSmith](/docs/ai-tools/langsmith), Langfuse) to detect quality degradation before it reaches users.
 - **Chargeback accuracy** — Cost attribution must be tamper-resistant. Ensure cost tags are set at the infrastructure layer, not by application code that could mis-attribute costs.
 
-## Related
+## Related Guides
 
 - [Multi-Model LLM Routing Architecture →](/docs/ai-architecture/multi-model-llm-routing)
 - [AI Gateway Architecture →](/docs/ai-architecture/ai-gateway-architecture)

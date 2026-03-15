@@ -23,7 +23,7 @@ Enterprise LLM deployments face risks that don't exist in traditional software:
 | **Bias & Fairness** | Discriminatory outputs in hiring, lending, etc. | Legal action, reputation |
 | **Vendor Lock-in** | Dependence on single model provider | Business continuity risk |
 
-## Governance Framework
+## Architecture Diagram
 
 ```
 ┌──────────────────────────────────────────────────────┐
@@ -242,7 +242,18 @@ Essential governance policies every enterprise should define:
 4. **Incident Response Policy** — AI-specific incident classification, escalation, and remediation
 5. **Quality Assurance Policy** — Evaluation frequency, accuracy thresholds, human review requirements
 
-## Related
+## Recommended Tools
+
+| Category | Tool | Purpose |
+|----------|------|---------|
+| **Guardrails** | [SlashLLM →](/docs/ai-tools/slashllm) | Enterprise LLM gateway with policy enforcement |
+| **Security** | [Lakera Guard →](/tools/lakera-guard-review) | Prompt injection detection and content filtering |
+| **Security** | [LLM Security Tools →](/docs/ai-tools/llm-security-tools) | Security tooling for LLM pipelines |
+| **Observability** | [Langfuse →](/tools/langfuse-review) | Audit logging and compliance tracing |
+| **Comparison** | [Lakera vs Guardrails AI →](/comparisons/lakera-vs-guardrails) | Security tool comparison for enterprise selection |
+| **Comparison** | [SlashLLM vs Lakera Guard →](/comparisons/slashllm-vs-lakera) | Gateway security comparison |
+
+## Related Guides
 
 - [Prompt Injection Defense Architecture →](./prompt-injection-defense)
 - [Secure LLM Pipelines →](./secure-llm-pipelines)

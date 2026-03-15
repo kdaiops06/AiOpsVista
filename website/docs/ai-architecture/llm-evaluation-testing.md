@@ -15,7 +15,7 @@ This playbook covers the infrastructure for systematic LLM evaluation — from o
 
 Three evaluation dimensions require different approaches: **correctness** (does the output answer the question accurately), **safety** (does the output follow policies and avoid harmful content), and **quality** (is the output well-structured, concise, and useful). Each dimension needs its own evaluation methodology and metrics.
 
-## Architecture Diagram Explanation
+## Architecture Diagram
 
 ```
 ┌─────────────────────────────────────────────────────────────────┐
@@ -81,7 +81,7 @@ Three evaluation dimensions require different approaches: **correctness** (does 
 | **Production monitor** | Online quality scoring on sampled traffic | Langfuse online scoring, custom pipeline |
 | **Safety evaluator** | Test for harmful, biased, or policy-violating outputs | [SlashLLM](/docs/ai-tools/slashllm) red teaming, custom safety suite |
 
-## Recommended Tool Stack
+## Recommended Tools
 
 ### Evaluation Platforms
 
@@ -191,7 +191,7 @@ Explanation:
 - **Evaluation cost** — LLM-as-Judge evaluations consume tokens. Budget for evaluation costs (typically 5-10% of production LLM spend) and use caching for repeated evaluations.
 - **Bias in evaluation** — LLM judges can have systematic biases (preferring verbose responses, specific formatting). Calibrate judges with human-annotated reference scores and monitor for drift.
 
-## Related
+## Related Guides
 
 - [LangSmith →](/docs/ai-tools/langsmith)
 - [AI Observability Tools →](/docs/ai-tools/ai-observability-tools)

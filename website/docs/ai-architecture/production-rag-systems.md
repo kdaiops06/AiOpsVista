@@ -23,7 +23,7 @@ The gap between a RAG demo and a production RAG system is enormous:
 | No access control | Row-level document security |
 | Manual updates | CI/CD for knowledge base changes |
 
-## Production RAG Architecture
+## Architecture Diagram
 
 ```
 ┌──────────────────────────────────────────────────────────────┐
@@ -274,7 +274,18 @@ security:
 - [ ] Implement access control for sensitive documents
 - [ ] Configure alerts for quality degradation and cost anomalies
 
-## Related
+## Recommended Tools
+
+| Category | Tool | Purpose |
+|----------|------|---------|
+| **Vector Database** | [Pinecone →](/docs/ai-tools/pinecone) | Managed vector database for production RAG |
+| **Vector Database** | [Weaviate →](/docs/ai-tools/weaviate) | Open-source vector search engine |
+| **Vector Database** | [Qdrant →](/docs/ai-tools/qdrant) | High-performance vector similarity search |
+| **Observability** | [Langfuse →](/tools/langfuse-review) | RAG pipeline tracing and evaluation |
+| **RAG Platforms** | [RAG Platforms →](/docs/ai-tools/rag-platforms) | Haystack, LlamaIndex, and RAG framework tools |
+| **Comparison** | [Pinecone vs Weaviate →](/comparisons/pinecone-vs-weaviate) | Vector database comparison for RAG systems |
+
+## Related Guides
 
 - [Vector Databases (Pinecone, Weaviate, Qdrant) →](/docs/ai-tools/vector-databases)
 - [Pinecone →](/docs/ai-tools/pinecone)

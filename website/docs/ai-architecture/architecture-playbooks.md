@@ -72,7 +72,7 @@ These architecture playbooks reference tools from our [AI Infrastructure Tool Di
 - [Tool Reviews →](/tools) — In-depth technical reviews with architecture analysis
 - [Head-to-Head Comparisons →](/comparisons) — Side-by-side tool comparisons
 
-## Related
+## Related Guides
 
 - [AI Infrastructure Tool Directory →](/docs/ai-tools/getting-started)
 - [Tool Comparisons →](/comparisons)

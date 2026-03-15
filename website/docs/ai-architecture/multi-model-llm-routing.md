@@ -15,7 +15,7 @@ This playbook covers the architecture for intelligent LLM routing — from simpl
 
 Why multi-model routing matters: a single LLM provider creates vendor lock-in, single points of failure, and cost inefficiency. Different models excel at different tasks — GPT-4 for complex reasoning, Claude for long-context analysis, Mistral for fast classification, and self-hosted Llama for privacy-sensitive workloads. An intelligent router matches requests to models based on these strengths.
 
-## Architecture Diagram Explanation
+## Architecture Diagram
 
 ```
 ┌─────────────────────────────────────────────────────────────────┐
@@ -72,7 +72,7 @@ Why multi-model routing matters: a single LLM provider creates vendor lock-in, s
 | **Security layer** | Input validation before routing | [SlashLLM](/docs/ai-tools/slashllm), Lakera Guard |
 | **Evaluation pipeline** | Compare model quality on production traffic | LangSmith, Langfuse evaluations |
 
-## Recommended Tool Stack
+## Recommended Tools
 
 ### Routing Infrastructure
 
@@ -174,7 +174,7 @@ router_settings:
 - **Provider credential scope** — Use provider API keys with minimum required permissions. For OpenAI, use project-scoped keys. For Anthropic, use workspace-scoped keys.
 - **Response integrity** — Monitor for model API tampering or unexpected response formats that could indicate a supply chain compromise.
 
-## Related
+## Related Guides
 
 - [AI Gateway Architecture →](/docs/ai-architecture/ai-gateway-architecture)
 - [Secure LLM API Gateway Deployment →](/docs/ai-architecture/secure-llm-api-gateway)

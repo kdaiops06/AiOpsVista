@@ -22,7 +22,7 @@ Prompt injection is the [#1 risk in the OWASP Top 10 for LLM Applications](https
 | **Encoding attacks** | Obfuscated input | Base64-encoded instructions, unicode tricks |
 | **Multi-modal injection** | Images, audio | Steganographic instructions hidden in images |
 
-## Defense Architecture
+## Architecture Diagram
 
 ```
 User Input
@@ -271,7 +271,7 @@ class RAGDocumentScanner:
         return safe_docs
 ```
 
-## Recommended Tool Stack
+## Recommended Tools
 
 | Layer | Tool | Purpose |
 |---|---|---|
@@ -389,7 +389,7 @@ def run_red_team_suite(endpoint: str) -> dict:
 - [ ] Configure alerts for high-severity injection attempts
 - [ ] Create incident response runbook for prompt injection events
 
-## Related
+## Related Guides
 
 - [Secure LLM Pipelines →](./secure-llm-pipelines)
 - [Enterprise AI Security →](./enterprise-ai-security)

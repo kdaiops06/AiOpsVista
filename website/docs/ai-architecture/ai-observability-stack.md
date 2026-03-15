@@ -21,7 +21,7 @@ Traditional APM tools (Datadog, New Relic, Grafana) treat LLM calls as opaque HT
 
 **LLM observability requires trace-level understanding of the AI pipeline.**
 
-## Architecture
+## Architecture Diagram
 
 ```
 ┌─────────────────────────────────────────────────┐
@@ -266,7 +266,17 @@ llm_retrieval_relevance = Histogram(
 - [ ] Set up prompt versioning and A/B testing
 - [ ] Use Phoenix for development-time RAG quality analysis
 
-## Related
+## Recommended Tools
+
+| Category | Tool | Purpose |
+|----------|------|---------|
+| **Tracing** | [Langfuse →](/tools/langfuse-review) | Open-source LLM tracing and analytics |
+| **Evaluation** | [Arize Phoenix →](/comparisons/langfuse-vs-arize) | LLM observability and evaluation platform |
+| **Observability** | [AI Observability Tools →](/docs/ai-tools/ai-observability-tools) | Comprehensive observability tool directory |
+| **Security** | [SlashLLM →](/docs/ai-tools/slashllm) | Gateway with built-in usage tracking and cost controls |
+| **Monitoring** | [LangSmith →](/docs/ai-tools/ai-observability-tools) | LLM development, testing, and monitoring platform |
+
+## Related Guides
 
 - [LLM Monitoring and Tracing →](./llm-monitoring-tracing)
 - [AI Cost Optimization →](./ai-cost-optimization)

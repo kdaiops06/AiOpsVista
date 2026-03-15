@@ -15,7 +15,7 @@ This playbook covers the deployment architecture for a production-grade secure L
 
 The key differentiator from generic [AI Gateway Architecture](/docs/ai-architecture/ai-gateway-architecture): this guide focuses specifically on the **deployment patterns, security hardening, and operational procedures** required to run an LLM gateway in production, rather than the conceptual architecture.
 
-## Architecture Diagram Explanation
+## Architecture Diagram
 
 ```
 ┌─────────────────────────────────────────────────────────────────┐
@@ -88,7 +88,7 @@ The key differentiator from generic [AI Gateway Architecture](/docs/ai-architect
 | **Metrics/tracing** | Gateway performance, cost tracking | Langfuse, Prometheus, OpenTelemetry |
 | **Key vault** | LLM provider API key storage | HashiCorp Vault, AWS Secrets Manager |
 
-## Recommended Tool Stack
+## Recommended Tools
 
 ### Gateway Infrastructure
 
@@ -202,7 +202,7 @@ spec:
 - **Transport security** — Enforce TLS 1.3 for all external connections. Use mTLS for service-to-service communication within the gateway cluster.
 - **Audit compliance** — Log every request/response with tenant ID, model used, token count, and policy decisions. Retain logs per regulatory requirements (typically 1-7 years for financial services).
 
-## Related
+## Related Guides
 
 - [AI Gateway Architecture →](/docs/ai-architecture/ai-gateway-architecture)
 - [Secure LLM Pipelines →](/docs/ai-architecture/secure-llm-pipelines)

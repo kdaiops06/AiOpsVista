@@ -23,7 +23,7 @@ As organizations scale LLM usage beyond a single application, common problems em
 | **Failover** | Single provider dependency | Automatic fallback to alternative models |
 | **Compliance** | No audit trail of LLM interactions | Complete audit log with PII detection |
 
-## Architecture
+## Architecture Diagram
 
 ```
 ┌──────────────────────────────────────────────────────────┐
@@ -345,7 +345,18 @@ gateway:
 - [ ] Implement audit logging for compliance
 - [ ] Deploy with HA (multiple replicas, health checks)
 
-## Related
+## Recommended Tools
+
+| Category | Tool | Purpose |
+|----------|------|---------|
+| **API Gateway** | [SlashLLM →](/docs/ai-tools/slashllm) | Unified LLM gateway with security, routing, and cost controls |
+| **API Gateway** | [AI Gateways →](/docs/ai-tools/ai-gateways) | Gateway platforms for LLM API management |
+| **Security** | [Lakera Guard →](/tools/lakera-guard-review) | Real-time prompt injection detection |
+| **Security** | [LLM Security Tools →](/docs/ai-tools/llm-security-tools) | Comprehensive LLM security tooling |
+| **Observability** | [Langfuse →](/tools/langfuse-review) | LLM tracing, cost tracking, and evaluation |
+| **Observability** | [AI Observability Tools →](/docs/ai-tools/ai-observability-tools) | Production monitoring for AI systems |
+
+## Related Guides
 
 - [AI Gateways (Tool Directory) →](/docs/ai-tools/ai-gateways)
 - [SlashLLM →](/docs/ai-tools/slashllm)

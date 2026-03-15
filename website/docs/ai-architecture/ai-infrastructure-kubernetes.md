@@ -21,7 +21,7 @@ Production architecture for running AI workloads on Kubernetes — GPU resource 
 | **Observability** | Prometheus, OpenTelemetry, DCGM GPU metrics |
 | **CI/CD** | GitOps (ArgoCD), Helm charts, Kustomize overlays |
 
-## Architecture Overview
+## Architecture Diagram
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
@@ -325,7 +325,7 @@ spec:
             storage: 100Gi
 ```
 
-## Recommended Tool Stack
+## Recommended Tools
 
 | Function | Tool | Purpose |
 |---|---|---|
@@ -402,7 +402,7 @@ spec:
 - [ ] Implement GitOps pipeline (ArgoCD) for model serving deployments
 - [ ] Set up alerts for GPU utilization, inference latency, and error rate
 
-## Related
+## Related Guides
 
 - [AI Gateway Architecture →](./ai-gateway-architecture)
 - [AI Observability Stack →](./ai-observability-stack)
