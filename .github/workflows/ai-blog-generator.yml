@@ -57,9 +57,12 @@ jobs:
 
           if not topic:
               # Auto-select topic for scheduled runs
-              prompt_topic = """Pick ONE specific, actionable blog post topic for a DevOps/AIOps
-              consulting blog. The topic should be practical and target mid-senior engineers.
-              Categories: DevOps, AIOps, Cloud, Kubernetes, Observability, Platform Engineering, Terraform.
+              prompt_topic = """Pick ONE specific, actionable blog post topic for an AI infrastructure intelligence
+              and DevOps consulting blog. The topic should be practical and target mid-senior engineers.
+              Categories: AI Infrastructure, LLM Security, AI Observability, RAG Systems, AI Agents,
+              AI Gateway Architecture, DevOps, AIOps, Cloud, Kubernetes, Observability, Platform Engineering, Terraform.
+              Prioritize AI infrastructure topics like LLM pipeline security, production RAG patterns,
+              AI observability best practices, AI agent deployment, or vector database selection.
               Return ONLY the topic title and 2-3 relevant tags as comma-separated values.
               Format: TOPIC: <title>\nTAGS: <tag1>,<tag2>"""
 
@@ -80,11 +83,16 @@ jobs:
 
           Requirements:
           - 1200-1800 words
-          - Target audience: mid-senior DevOps/SRE engineers
+          - Target audience: mid-senior DevOps/SRE/AI infrastructure engineers
           - Include practical code examples where relevant
           - Use Markdown with proper headings (h2, h3)
           - Start with a compelling intro paragraph (this appears in blog listing)
           - Add <!-- truncate --> after the intro paragraph
+          - Where relevant, reference AIOpsVista resources:
+            - Tool reviews at /tools
+            - Comparisons at /comparisons
+            - Architecture guides at /docs/category/ai-architecture
+            - AI tool docs at /docs/category/ai-tools
           - Include a call-to-action at the end linking to /contact for consulting
           - Tone: professional, practical, opinionated
           - Do NOT include the frontmatter — I will add it

@@ -6,28 +6,28 @@ import Heading from '@theme/Heading';
 export default function Home(): ReactNode {
   return (
     <Layout
-      title="DevOps & AIOps Consulting"
-      description="AIOps Vista — Professional DevOps & AIOps consulting. Cloud architecture, Kubernetes, observability, and intelligent operations.">
+      title="AI Infrastructure Intelligence & DevOps Consulting"
+      description="AIOps Vista — AI infrastructure intelligence hub. LLM security, AI observability, production RAG systems, and DevOps consulting for enterprise engineering teams.">
 
       {/* HERO */}
       <header className="hero-section">
         <div className="hero-bg-pattern" />
         <div className="container hero-content">
-          <span className="hero-badge">DevOps & AIOps Consulting</span>
+          <span className="hero-badge">AI Infrastructure Intelligence & DevOps Consulting</span>
           <Heading as="h1" className="hero-title">
             Build Intelligent,<br />Resilient Infrastructure
           </Heading>
           <p className="hero-description">
-            We help engineering teams design, automate, and operate cloud-native
-            infrastructure with AI-driven operations. From Kubernetes architecture
-            to AIOps implementation — we deliver results.
+            We help engineering teams design, secure, and operate AI infrastructure
+            at scale. From LLM pipeline security and AI observability to Kubernetes
+            architecture and AIOps implementation — we deliver results.
           </p>
           <div className="hero-actions">
             <Link className="btn-primary" to="/contact">
               Book a Free Consultation
             </Link>
-            <Link className="btn-secondary" to="/services">
-              View Services
+            <Link className="btn-secondary" to="/ai-tools">
+              Explore AI Tools
             </Link>
           </div>
           <div className="hero-trust">
@@ -37,6 +37,7 @@ export default function Home(): ReactNode {
               <span className="trust-item">Azure</span>
               <span className="trust-item">GCP</span>
               <span className="trust-item">Kubernetes</span>
+              <span className="trust-item">LLM/AI</span>
             </div>
           </div>
         </div>
@@ -73,7 +74,7 @@ export default function Home(): ReactNode {
             <div className="section-header">
               <span className="section-label">What We Do</span>
               <h2>Consulting Services</h2>
-              <p>End-to-end DevOps and AIOps solutions tailored for your engineering team.</p>
+              <p>End-to-end AI infrastructure, DevOps, and AIOps solutions tailored for your engineering team.</p>
             </div>
             <div className="services-grid">
               <div className="service-card">
@@ -135,7 +136,7 @@ export default function Home(): ReactNode {
               </div>
               <div className="why-card">
                 <h3>🤖 AI-Native Operations</h3>
-                <p>We integrate AI into your operations pipeline — from anomaly detection to predictive scaling and auto-remediation.</p>
+                <p>We integrate AI into your operations pipeline — from LLM security and observability to predictive scaling and autonomous remediation.</p>
               </div>
               <div className="why-card">
                 <h3>📚 Knowledge Transfer</h3>
@@ -151,32 +152,32 @@ export default function Home(): ReactNode {
             <div className="section-header">
               <span className="section-label">Open Knowledge</span>
               <h2>Technical Documentation</h2>
-              <p>Free, in-depth guides and reference documentation for the community.</p>
+              <p>Free, in-depth guides on AI infrastructure, LLM operations, and cloud-native engineering.</p>
             </div>
             <div className="docs-highlight-grid">
+              <Link to="/docs/category/ai-tools" className="doc-card">
+                <h3>🛡️ AI Tools</h3>
+                <p>LLM security, observability, orchestration, RAG platforms, and agent framework analysis.</p>
+              </Link>
+              <Link to="/docs/category/ai-architecture" className="doc-card">
+                <h3>🏗️ AI Architecture</h3>
+                <p>Secure LLM pipelines, AI observability stack, production RAG systems, and gateway patterns.</p>
+              </Link>
               <Link to="/docs/category/aiops" className="doc-card">
                 <h3>📊 AIOps</h3>
                 <p>Monitoring, anomaly detection, incident management, and predictive operations.</p>
-              </Link>
-              <Link to="/docs/category/ai-infrastructure" className="doc-card">
-                <h3>🏗️ AI Infrastructure</h3>
-                <p>GPU clusters, model serving, MLOps pipelines, and infrastructure as code.</p>
-              </Link>
-              <Link to="/docs/category/tool-setup" className="doc-card">
-                <h3>🛠️ Tool Setup</h3>
-                <p>VS Code, Claude, Copilot, Docker, Kubernetes, and development environments.</p>
               </Link>
               <Link to="/docs/category/cloud-devops" className="doc-card">
                 <h3>☁️ Cloud & DevOps</h3>
                 <p>AWS, Azure, GCP services, CI/CD pipelines, and production deployments.</p>
               </Link>
+              <Link to="/docs/category/ai-infrastructure" className="doc-card">
+                <h3>🖥️ AI Infrastructure</h3>
+                <p>GPU clusters, model serving, MLOps pipelines, and infrastructure as code.</p>
+              </Link>
               <Link to="/docs/category/labs" className="doc-card">
                 <h3>🧪 Hands-On Labs</h3>
                 <p>Build real projects — chatbots, anomaly detection, RAG systems.</p>
-              </Link>
-              <Link to="/docs/category/ai-learning" className="doc-card">
-                <h3>🧠 AI Learning</h3>
-                <p>ML fundamentals, LLMs, prompt engineering, fine-tuning, and AI agents.</p>
               </Link>
             </div>
           </div>
@@ -186,7 +187,7 @@ export default function Home(): ReactNode {
         <section className="section section-alt">
           <div className="container">
             <div className="section-header">
-              <span className="section-label">AI Infrastructure</span>
+              <span className="section-label">AI Infrastructure Intelligence</span>
               <h2>AI Tool Intelligence</h2>
               <p>In-depth reviews, comparisons, and architecture guides for AI infrastructure tools.</p>
             </div>
@@ -263,7 +264,7 @@ export default function Home(): ReactNode {
                 <span className="section-label">Newsletter</span>
                 <h2>Stay Ahead of the Curve</h2>
                 <p>
-                  Weekly DevOps and AIOps insights — practical guides, tool reviews,
+                  Weekly AI infrastructure, DevOps, and LLM operations insights — practical guides, tool reviews,
                   and industry news delivered to your inbox. No spam, unsubscribe anytime.
                 </p>
                 <Link className="btn-primary" to="/newsletter">
@@ -290,7 +291,7 @@ export default function Home(): ReactNode {
         <section className="cta-section">
           <div className="container">
             <h2>Let's Build Something Great Together</h2>
-            <p>Whether you are modernizing your infrastructure or implementing AIOps from scratch — we can help.</p>
+            <p>Whether you are modernizing your infrastructure, securing your LLM pipelines, or implementing AIOps from scratch — we can help.</p>
             <div className="hero-actions">
               <Link className="btn-primary" to="/contact">
                 Schedule a Consultation

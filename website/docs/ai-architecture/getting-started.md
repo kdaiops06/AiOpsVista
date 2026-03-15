@@ -48,9 +48,13 @@ When designing AI infrastructure, evaluate every component against these criteri
 | [AI Observability Stack](./ai-observability-stack) | Monitoring, tracing, and evaluation for production AI |
 | [DevOps for AI Agents](./devops-for-ai-agents) | CI/CD, testing, and deployment for agent systems |
 | [Enterprise AI Security](./enterprise-ai-security) | Governance, compliance, and risk management |
+| [Production RAG Systems](./production-rag-systems) | Retrieval architecture, hybrid search, re-ranking, caching |
+| [AI Gateway Architecture](./ai-gateway-architecture) | Centralized LLM routing, security, and cost management |
 
 ## Related Resources
 
 - [AI Infrastructure Tool Directory →](/ai-tools)
+- [AI Tools Documentation →](/docs/category/ai-tools)
 - [Tool Comparisons →](/comparisons)
 - [AI Infrastructure Consulting →](/services)
+- [Partner With AIOpsVista →](/partner-with-aiopsvista)

@@ -14,6 +14,8 @@ on:
           - aiops
           - cloud-devops
           - ai-infra
+          - ai-tools
+          - ai-architecture
           - tool-setup
           - ai-learning
           - labs
@@ -63,6 +65,8 @@ jobs:
               "aiops": ["Anomaly Detection with ML", "Event Correlation Patterns", "Automated Incident Response"],
               "cloud-devops": ["Terraform Best Practices", "CI/CD Pipeline Patterns", "AWS Well-Architected Review"],
               "ai-infra": ["GPU Cluster Management", "Model Serving at Scale", "ML Pipeline Architecture"],
+              "ai-tools": ["Vector Database Tools", "LLM Evaluation Frameworks", "AI Code Generation Tools"],
+              "ai-architecture": ["Multi-Agent System Architecture", "LLM Cost Optimization Patterns", "AI Platform Engineering"],
               "tool-setup": ["Docker Development Setup", "Kubernetes Local Development", "VS Code for DevOps"],
               "ai-learning": ["ML Fundamentals for DevOps", "Prompt Engineering Guide", "LLM Integration Patterns"],
               "labs": ["AIOps Pipeline Lab", "Kubernetes Security Lab", "Observability Stack Lab"],
@@ -77,13 +81,17 @@ jobs:
 
           Requirements:
           - Use Markdown format
-          - Include frontmatter with title, sidebar_position, description
+          - Include frontmatter with title, sidebar_position, description, keywords
           - Set sidebar_position to {len(existing_docs) + 1}
-          - Include: Overview, Prerequisites, Step-by-Step Guide, Best Practices, Troubleshooting
+          - For ai-tools category: Include tool overview, architecture explanation, use cases, comparison links, and deployment patterns
+          - For ai-architecture category: Include architecture explanation, recommended tool stack, deployment patterns, and security considerations
+          - For other categories: Include Overview, Prerequisites, Step-by-Step Guide, Best Practices, Troubleshooting
           - Include code examples where relevant
+          - Include architecture diagrams using ASCII art where applicable
           - 800-1200 words
           - Tone: clear, practical, reference-quality
           - Link to related docs within the same category where appropriate
+          - Include a Related section at the end linking to relevant architecture guides, tool docs, and comparisons
 
           Write the complete documentation page:"""
 

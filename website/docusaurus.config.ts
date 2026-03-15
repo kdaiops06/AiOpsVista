@@ -4,7 +4,7 @@ import type * as Preset from '@docusaurus/preset-classic';
 
 const config: Config = {
   title: 'AIOps Vista',
-  tagline: 'DevOps & AIOps Consulting | Cloud Architecture | Intelligent Operations',
+  tagline: 'AI Infrastructure Intelligence | DevOps & AIOps Consulting | LLM Security & Observability',
   favicon: 'img/favicon.ico',
 
   future: {
@@ -58,8 +58,10 @@ const config: Config = {
       respectPrefersColorScheme: true,
     },
     metadata: [
-      {name: 'keywords', content: 'AIOps, DevOps, consulting, cloud architecture, Kubernetes, observability, AI operations, infrastructure'},
-      {name: 'description', content: 'AIOps Vista — Professional DevOps & AIOps consulting services. Cloud architecture, Kubernetes, observability, and intelligent operations.'},
+      {name: 'keywords', content: 'AIOps, DevOps, AI infrastructure, LLM security, AI observability, consulting, cloud architecture, Kubernetes, LLM operations, RAG systems, AI agents, AI gateway'},
+      {name: 'description', content: 'AIOps Vista — AI infrastructure intelligence hub. LLM security, AI observability, production RAG systems, DevOps consulting, and AI tool reviews for enterprise engineering teams.'},
+      {property: 'og:type', content: 'website'},
+      {property: 'og:site_name', content: 'AIOps Vista'},
     ],
     navbar: {
       title: 'AIOps Vista',
@@ -106,6 +108,7 @@ const config: Config = {
             {label: 'Tool Directory', to: '/ai-tools'},
             {label: 'Tool Reviews', to: '/tools'},
             {label: 'Comparisons', to: '/comparisons'},
+            {label: 'AI Tools Docs', to: '/docs/category/ai-tools'},
           ],
         },
         {

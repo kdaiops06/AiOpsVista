@@ -1,0 +1,8 @@
+{
+  "label": "AI Tools",
+  "position": 1.5,
+  "link": {
+    "type": "generated-index",
+    "description": "AI infrastructure tool directory — in-depth technical analysis of LLM security, AI observability, orchestration, RAG, agent frameworks, and MLOps tools."
+  }
+}

@@ -212,5 +212,10 @@ def safe_llm_call(prompt: str) -> str:
 
 - [Enterprise AI Security →](./enterprise-ai-security)
 - [AI Observability Stack →](./ai-observability-stack)
+- [AI Gateway Architecture →](./ai-gateway-architecture)
+- [LLM Security Tools →](/docs/ai-tools/llm-security-tools)
 - [Lakera Guard Review →](/tools/lakera-guard-review)
 - [LLM Security Tool Comparison →](/comparisons/lakera-vs-guardrails)
+- [SlashLLM vs Lakera Guard →](/comparisons/slashllm-vs-lakera)
+- [AI Gateway Architecture →](./ai-gateway-architecture)
+- [AI Infrastructure Consulting →](/services)

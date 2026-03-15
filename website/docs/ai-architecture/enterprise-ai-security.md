@@ -218,10 +218,38 @@ Run weekly automated audits:
 - [ ] Vendor risk assessments for model providers
 - [ ] Employee AI literacy training program
 
+## LLM Governance Framework Essentials
+
+Beyond technical security controls, enterprise LLM governance requires organizational policies and accountability:
+
+### Model Lifecycle Governance
+
+| Stage | Governance Activity | Responsible |
+|---|---|---|
+| **Selection** | Evaluate models against approved list, benchmark performance, assess vendor risk | AI Governance Board |
+| **Integration** | Architecture review, security assessment, data flow mapping | InfoSec + Engineering |
+| **Deployment** | Risk tier approval, guardrail configuration, monitoring setup | AI Governance Board + SRE |
+| **Operation** | Continuous evaluation, cost monitoring, quality tracking | Platform Team |
+| **Retirement** | Deprecation plan, data retention review, replacement validation | AI Governance Board |
+
+### Policy Templates
+
+Essential governance policies every enterprise should define:
+
+1. **Acceptable Use Policy** — Which use cases and data types are approved for LLM processing
+2. **Model Procurement Policy** — Approved vendors, evaluation criteria, contract requirements
+3. **Data Handling Policy** — Classification rules for LLM inputs, PII handling, data residency
+4. **Incident Response Policy** — AI-specific incident classification, escalation, and remediation
+5. **Quality Assurance Policy** — Evaluation frequency, accuracy thresholds, human review requirements
+
 ## Related
 
 - [Secure LLM Pipelines →](./secure-llm-pipelines)
 - [AI Observability Stack →](./ai-observability-stack)
+- [AI Gateway Architecture →](./ai-gateway-architecture)
+- [LLM Security Tools →](/docs/ai-tools/llm-security-tools)
 - [Lakera Guard Review →](/tools/lakera-guard-review)
 - [Lakera vs Guardrails AI →](/comparisons/lakera-vs-guardrails)
+- [SlashLLM vs Lakera Guard →](/comparisons/slashllm-vs-lakera)
 - [Incident Detection →](/docs/aiops/incident-detection)
+- [AI Infrastructure Consulting →](/services)
