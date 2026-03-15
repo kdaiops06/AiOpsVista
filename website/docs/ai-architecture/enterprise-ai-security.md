@@ -244,6 +244,7 @@ Essential governance policies every enterprise should define:
 
 ## Related
 
+- [Prompt Injection Defense Architecture →](./prompt-injection-defense)
 - [Secure LLM Pipelines →](./secure-llm-pipelines)
 - [AI Observability Stack →](./ai-observability-stack)
 - [AI Gateway Architecture →](./ai-gateway-architecture)

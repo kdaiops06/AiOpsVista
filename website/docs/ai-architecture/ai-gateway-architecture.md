@@ -260,7 +260,13 @@ metadata:
   name: ai-gateway
 spec:
   replicas: 3
+  selector:
+    matchLabels:
+      app: ai-gateway
   template:
+    metadata:
+      labels:
+        app: ai-gateway
     spec:
       containers:
       - name: ai-gateway

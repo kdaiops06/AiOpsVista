@@ -1,13 +1,13 @@
 ---
 sidebar_position: 4
-title: DevOps for AI Agents
-description: CI/CD pipelines, testing strategies, deployment patterns, and operational practices for autonomous AI agent systems.
-keywords: [ai agents devops, agent deployment, crewai, autogen, ai agent testing]
+title: DevOps for AI Systems
+description: CI/CD pipelines, testing strategies, deployment patterns, and operational practices for AI applications — agents, RAG systems, and LLM-powered services.
+keywords: [ai devops, ai cicd, agent deployment, crewai, autogen, ai agent testing, llm deployment, rag deployment]
 ---
 
-# DevOps for AI Agents
+# DevOps for AI Systems
 
-How to build reliable CI/CD pipelines, testing strategies, and deployment infrastructure for autonomous AI agent systems.
+How to build reliable CI/CD pipelines, testing strategies, and deployment infrastructure for AI applications — including autonomous agents, RAG pipelines, and LLM-powered services.
 
 ## Why Agent DevOps Is Different
 
@@ -254,6 +254,60 @@ class AgentCircuitBreaker:
         alert_oncall("Agent circuit breaker tripped")
         enable_fallback_workflow()
 ```
+
+## RAG and LLM Pipeline CI/CD
+
+Agent workflows are not the only AI systems that need CI/CD. RAG pipelines and LLM-powered APIs also require specialized deployment practices:
+
+### RAG Pipeline Deployment Checklist
+
+```yaml
+# rag-ci-checks.yml — CI checks for RAG systems
+rag_pipeline_checks:
+  - name: "Embedding model version"
+    check: "Verify embedding model matches production index"
+    
+  - name: "Retrieval quality"
+    check: "Run eval suite against 50 test queries, assert recall > 0.8"
+    
+  - name: "Index freshness"
+    check: "Verify vector index was rebuilt after document updates"
+    
+  - name: "Chunk size consistency"
+    check: "Validate chunk size and overlap match production config"
+    
+  - name: "Prompt template diff"
+    check: "Show prompt changes in PR review, run A/B eval"
+```
+
+### Prompt Version Management
+
+Track prompt templates as versioned artifacts alongside code:
+
+```python
+# prompts/v2.3/rag_answer.yaml  (checked into Git)
+# name: rag-answer
+# version: 2.3
+# model: gpt-4o
+# temperature: 0.3
+
+PROMPT_TEMPLATE = """You are a helpful assistant. Answer the user's question
+using ONLY the provided context. If the context doesn't contain the answer,
+say "I don't have enough information to answer that."
+
+Context:
+{context}
+
+Question: {question}
+
+Answer:"""
+```
+
+Every prompt change triggers:
+1. Automated evaluation against test dataset
+2. Quality score comparison vs current production prompt
+3. PR review with before/after quality metrics
+4. Staged rollout (5% → 25% → 100%) with rollback on quality drop
 
 ## Implementation Checklist
 

@@ -176,6 +176,85 @@ response = call_llm(
 | **Prompt injection blocks** | Security | Any increase |
 | **Evaluation scores** | Quality over time | Declining trend |
 
+## Alerting Patterns for LLM Systems
+
+Define alerts that catch LLM-specific failures before users report them:
+
+```yaml
+# prometheus-llm-alerts.yaml
+groups:
+  - name: llm-observability-alerts
+    rules:
+      # Quality degradation — catch before users complain
+      - alert: LLMQualityDrop
+        expr: |
+          (rate(llm_quality_score_sum[1h]) / rate(llm_quality_score_count[1h])) < 0.7
+          and
+          (rate(llm_quality_score_sum[24h]) / rate(llm_quality_score_count[24h])) > 0.8
+        for: 30m
+        labels:
+          severity: warning
+        annotations:
+          summary: "LLM quality score dropped below 0.7 (24h avg was above 0.8)"
+
+      # Cost spike — prevent runaway spending
+      - alert: LLMCostSpike
+        expr: |
+          sum(increase(llm_cost_usd_total[1h])) > 
+          2 * avg_over_time(sum(increase(llm_cost_usd_total[1h]))[7d:1h])
+        for: 15m
+        labels:
+          severity: critical
+        annotations:
+          summary: "LLM cost is 2x the 7-day hourly average"
+
+      # Retrieval quality — RAG returning irrelevant docs
+      - alert: LLMRetrievalQualityLow
+        expr: rate(llm_retrieval_relevance_score_sum[1h]) / rate(llm_retrieval_relevance_score_count[1h]) < 0.5
+        for: 20m
+        labels:
+          severity: warning
+        annotations:
+          summary: "RAG retrieval relevance score below 0.5 — check index freshness"
+```
+
+## Production Dashboard Design
+
+Structure your Grafana dashboard with these panels for complete LLM visibility:
+
+| Row | Panels | Purpose |
+|---|---|---|
+| **Overview** | Request rate, error rate, active requests, SLO burn | At-a-glance health |
+| **Latency** | p50/p95/p99 time series, latency heatmap | Performance tracking |
+| **Cost** | Hourly cost by model, tokens breakdown, cost per request | Spend monitoring |
+| **Quality** | Quality score trend, hallucination rate, evaluation pass rate | Output reliability |
+| **RAG** | Retrieval relevance, cache hit rate, document count | Retrieval health |
+
+```python
+# Export dashboard-ready metrics from your application
+from prometheus_client import Histogram, Counter
+
+llm_request_duration = Histogram(
+    "llm_request_duration_seconds",
+    "LLM request duration",
+    ["model", "feature"],
+    buckets=[0.5, 1.0, 2.0, 5.0, 10.0, 30.0, 60.0],
+)
+
+llm_cost_total = Counter(
+    "llm_cost_usd_total",
+    "Total LLM cost in USD",
+    ["model", "feature"],
+)
+
+llm_retrieval_relevance = Histogram(
+    "llm_retrieval_relevance_score",
+    "RAG retrieval relevance score",
+    ["collection"],
+    buckets=[0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0],
+)
+```
+
 ## Implementation Checklist
 
 - [ ] Deploy Langfuse (self-hosted or cloud) for production tracing
@@ -189,6 +268,7 @@ response = call_llm(
 
 ## Related
 
+- [LLM Monitoring and Tracing →](./llm-monitoring-tracing)
 - [Secure LLM Pipelines →](./secure-llm-pipelines)
 - [Production RAG Systems →](./production-rag-systems)
 - [AI Gateway Architecture →](./ai-gateway-architecture)
