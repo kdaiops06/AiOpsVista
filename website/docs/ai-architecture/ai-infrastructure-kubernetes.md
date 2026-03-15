@@ -303,8 +303,7 @@ spec:
               value: "text2vec-openai,generative-openai"
             - name: CLUSTER_DATA_BIND_PORT
               value: "7001"
-            - name: REPLICATION_FACTOR
-              value: "3"
+          # Note: Replication factor is configured per collection at schema creation time via the Weaviate client, not as a server-level environment variable.
           resources:
             requests:
               memory: "8Gi"
