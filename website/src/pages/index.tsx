@@ -182,6 +182,43 @@ export default function Home(): ReactNode {
           </div>
         </section>
 
+        {/* AI TOOLS & COMPARISONS */}
+        <section className="section section-alt">
+          <div className="container">
+            <div className="section-header">
+              <span className="section-label">AI Infrastructure</span>
+              <h2>AI Tool Intelligence</h2>
+              <p>In-depth reviews, comparisons, and architecture guides for AI infrastructure tools.</p>
+            </div>
+            <div className="services-grid">
+              <Link to="/ai-tools" className="doc-card">
+                <h3>🗂️ AI Tool Directory</h3>
+                <p>Curated directory of AI infrastructure tools — security, observability, orchestration, RAG, agents, and MLOps.</p>
+              </Link>
+              <Link to="/tools" className="doc-card">
+                <h3>📝 Tool Reviews</h3>
+                <p>Hands-on technical reviews with architecture analysis, pros/cons, and implementation guidance.</p>
+              </Link>
+              <Link to="/comparisons" className="doc-card">
+                <h3>📊 Head-to-Head Comparisons</h3>
+                <p>Side-by-side feature comparisons to help you pick the right tool for your stack.</p>
+              </Link>
+              <Link to="/docs/category/ai-architecture" className="doc-card">
+                <h3>🏗️ Architecture Guides</h3>
+                <p>Production architecture patterns for secure LLM pipelines, AI observability, and agent systems.</p>
+              </Link>
+              <Link to="/partner-with-aiopsvista" className="doc-card">
+                <h3>🤝 Partner Program</h3>
+                <p>AI infrastructure startups — grow your tool through technical reviews and consulting referrals.</p>
+              </Link>
+              <Link to="/services#ai-infrastructure" className="doc-card">
+                <h3>🤖 AI Infrastructure Consulting</h3>
+                <p>Expert consulting for LLM pipelines, AI security, observability, and agent deployment.</p>
+              </Link>
+            </div>
+          </div>
+        </section>
+
         {/* FEATURED BLOG POSTS */}
         <section className="section section-alt">
           <div className="container">

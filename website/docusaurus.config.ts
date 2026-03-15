@@ -69,7 +69,8 @@ const config: Config = {
       },
       items: [
         {to: '/services', label: 'Services', position: 'left'},
-        {to: '/case-studies', label: 'Case Studies', position: 'left'},
+        {to: '/ai-tools', label: 'AI Tools', position: 'left'},
+        {to: '/comparisons', label: 'Comparisons', position: 'left'},
         {
           type: 'docSidebar',
           sidebarId: 'tutorialSidebar',
@@ -77,7 +78,6 @@ const config: Config = {
           label: 'Docs',
         },
         {to: '/blog', label: 'Blog', position: 'left'},
-        {to: '/tech-news', label: 'Tech News', position: 'left'},
         {to: '/resources', label: 'Resources', position: 'left'},
         {to: '/about', label: 'About', position: 'right'},
         {to: '/contact', label: 'Contact', position: 'right'},
@@ -96,25 +96,25 @@ const config: Config = {
           items: [
             {label: 'Services', to: '/services'},
             {label: 'Case Studies', to: '/case-studies'},
+            {label: 'Partner With Us', to: '/partner-with-aiopsvista'},
             {label: 'Book a Consultation', to: '/contact'},
+          ],
+        },
+        {
+          title: 'AI Tools',
+          items: [
+            {label: 'Tool Directory', to: '/ai-tools'},
+            {label: 'Tool Reviews', to: '/tools'},
+            {label: 'Comparisons', to: '/comparisons'},
           ],
         },
         {
           title: 'Resources',
           items: [
             {label: 'Documentation', to: '/docs/'},
+            {label: 'AI Architecture Guides', to: '/docs/category/ai-architecture'},
             {label: 'Blog', to: '/blog'},
-            {label: 'Tech News', to: '/tech-news'},
             {label: 'Templates & Courses', to: '/resources'},
-          ],
-        },
-        {
-          title: 'Topics',
-          items: [
-            {label: 'AIOps', to: '/docs/category/aiops'},
-            {label: 'Cloud & DevOps', to: '/docs/category/cloud-devops'},
-            {label: 'AI Infrastructure', to: '/docs/category/ai-infrastructure'},
-            {label: 'Hands-On Labs', to: '/docs/category/labs'},
           ],
         },
         {

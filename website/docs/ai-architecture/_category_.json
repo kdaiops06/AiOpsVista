@@ -1,0 +1,8 @@
+{
+  "label": "AI Architecture",
+  "position": 2.5,
+  "link": {
+    "type": "generated-index",
+    "description": "Enterprise AI architecture patterns — secure LLM pipelines, AI observability stacks, DevOps for AI agents, and governance frameworks."
+  }
+}

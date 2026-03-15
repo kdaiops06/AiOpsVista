@@ -99,6 +99,38 @@ const services = [
     ],
     result: 'Production Kubernetes with 99.9% uptime and developer self-service.',
   },
+  {
+    id: 'ai-infrastructure',
+    icon: '🤖',
+    title: 'AI Infrastructure Consulting',
+    subtitle: 'Production LLM & AI Agent Systems',
+    description: 'Design and deploy production-grade AI infrastructure — from secure LLM pipelines to autonomous agent systems. We help teams select, integrate, and operate AI tools at enterprise scale.',
+    deliverables: [
+      'LLM pipeline architecture and security (prompt injection defense, PII filtering)',
+      'AI observability stack (Langfuse, Phoenix, custom eval pipelines)',
+      'RAG system design and optimization (retrieval quality, chunking strategy)',
+      'AI agent deployment with safety controls and CI/CD',
+      'Model serving infrastructure (GPU clusters, auto-scaling, cost optimization)',
+      'AI governance framework and compliance (EU AI Act, SOC 2, HIPAA)',
+    ],
+    result: 'Secure, observable, production-ready AI infrastructure with 40%+ cost savings.',
+  },
+  {
+    id: 'ai-security',
+    icon: '🛡️',
+    title: 'AI Security & Governance',
+    subtitle: 'Enterprise LLM Risk Management',
+    description: 'Protect your AI systems from adversarial attacks, data leakage, and compliance risks. We implement defense-in-depth architectures for enterprise LLM deployments.',
+    deliverables: [
+      'Threat modeling for LLM applications',
+      'Prompt injection defense and output guardrails',
+      'PII detection and data loss prevention',
+      'AI use case risk classification framework',
+      'Compliance controls mapping (GDPR, HIPAA, EU AI Act)',
+      'Red team exercises and security testing for AI systems',
+    ],
+    result: 'Enterprise-grade AI security with zero data leakage incidents.',
+  },
 ];
 
 export default function Services(): ReactNode {
