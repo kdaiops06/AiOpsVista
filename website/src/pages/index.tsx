@@ -7,20 +7,20 @@ export default function Home(): ReactNode {
   return (
     <Layout
       title="AI Infrastructure Intelligence & DevOps Consulting"
-      description="AIOps Vista — AI infrastructure intelligence hub. LLM security, AI observability, production RAG systems, and DevOps consulting for enterprise engineering teams.">
+      description="AIOps Vista — AI infrastructure intelligence hub. Architecture intelligence, AI tool discovery, and DevOps consulting for modern AI platforms.">
 
-      {/* HERO */}
+      {/* HERO — Step 1: Enhanced positioning with three pillars */}
       <header className="hero-section">
         <div className="hero-bg-pattern" />
         <div className="container hero-content">
-          <span className="hero-badge">AI Infrastructure Intelligence & DevOps Consulting</span>
+          <span className="hero-badge">AI Infrastructure Intelligence &middot; Developer Tool Discovery &middot; DevOps Consulting</span>
           <Heading as="h1" className="hero-title">
-            Build Intelligent,<br />Resilient Infrastructure
+            Build Secure, Production-Ready<br />AI Infrastructure
           </Heading>
           <p className="hero-description">
-            We help engineering teams design, secure, and operate AI infrastructure
-            at scale. From LLM pipeline security and AI observability to Kubernetes
-            architecture and AIOps implementation — we deliver results.
+            Architecture intelligence, AI tool discovery, and DevOps consulting for modern AI platforms.
+            From LLM pipeline security and AI observability to Kubernetes architecture
+            and AIOps implementation — we deliver results.
           </p>
           <div className="hero-actions">
             <Link className="btn-primary" to="/contact">
@@ -68,8 +68,131 @@ export default function Home(): ReactNode {
           </div>
         </section>
 
-        {/* SERVICES OVERVIEW */}
+        {/* Step 2: AI INFRASTRUCTURE INTELLIGENCE — Authority Section */}
         <section className="section">
+          <div className="container">
+            <div className="section-header">
+              <span className="section-label">Deep Technical Expertise</span>
+              <h2>AI Infrastructure Intelligence</h2>
+              <p>Production-tested architecture guides, tool evaluations, and infrastructure patterns for engineering teams building AI systems.</p>
+            </div>
+            <div className="authority-grid">
+              <Link to="/docs/ai-architecture/secure-llm-pipelines" className="authority-card">
+                <div className="authority-icon">🔐</div>
+                <h3>Secure LLM Pipeline Architecture</h3>
+                <p>End-to-end security patterns for LLM deployments — input validation, output filtering, prompt injection defense, and data governance.</p>
+                <span className="card-link">Read guide →</span>
+              </Link>
+              <Link to="/docs/ai-architecture/ai-observability-stack" className="authority-card">
+                <div className="authority-icon">📡</div>
+                <h3>AI Observability Stack</h3>
+                <p>Full-stack observability for AI systems — trace LLM calls, monitor model performance, track token costs, and detect drift.</p>
+                <span className="card-link">Read guide →</span>
+              </Link>
+              <Link to="/docs/ai-architecture/production-rag-systems" className="authority-card">
+                <div className="authority-icon">🧠</div>
+                <h3>RAG Production Deployment</h3>
+                <p>Production architecture for retrieval-augmented generation — vector databases, embedding pipelines, chunking strategies, and evaluation.</p>
+                <span className="card-link">Read guide →</span>
+              </Link>
+              <Link to="/docs/ai-architecture/prompt-injection-defense" className="authority-card">
+                <div className="authority-icon">🛡️</div>
+                <h3>Prompt Injection Defense</h3>
+                <p>Multi-layer defense architecture against prompt injection attacks — input sanitization, output validation, and runtime guardrails.</p>
+                <span className="card-link">Read guide →</span>
+              </Link>
+            </div>
+            <div style={{textAlign: 'center', marginTop: '2rem'}}>
+              <Link className="btn-primary" to="/docs/category/ai-architecture">
+                View All Architecture Guides →
+              </Link>
+            </div>
+          </div>
+        </section>
+
+        {/* Step 3: FEATURED AI INFRASTRUCTURE TOOLS */}
+        <section className="section section-alt">
+          <div className="container">
+            <div className="section-header">
+              <span className="section-label">Tool Discovery</span>
+              <h2>Featured AI Infrastructure Tools</h2>
+              <p>In-depth reviews and architecture analysis of the tools powering modern AI infrastructure.</p>
+            </div>
+            <div className="featured-tools-grid">
+              <Link to="/docs/ai-tools/slashllm" className="featured-tool-card featured-tool-highlight">
+                <div className="featured-tool-badge">AI Security Gateway</div>
+                <h3>SlashLLM</h3>
+                <p>Unified AI gateway with multi-layer security — prompt injection defense, policy governance, red teaming, and SOC-level monitoring for enterprise LLM deployments.</p>
+                <span className="card-link">View deep-dive →</span>
+              </Link>
+              <Link to="/docs/ai-tools/pinecone" className="featured-tool-card">
+                <div className="featured-tool-badge">Vector Database</div>
+                <h3>Pinecone</h3>
+                <p>Fully managed vector database for high-performance similarity search. Serverless architecture with automatic scaling and zero infrastructure management.</p>
+                <span className="card-link">View deep-dive →</span>
+              </Link>
+              <Link to="/docs/ai-tools/weaviate" className="featured-tool-card">
+                <div className="featured-tool-badge">Vector Database</div>
+                <h3>Weaviate</h3>
+                <p>Open-source vector database with built-in vectorization modules. Self-hosted or cloud-managed with native multi-tenancy support.</p>
+                <span className="card-link">View deep-dive →</span>
+              </Link>
+              <Link to="/docs/ai-tools/langsmith" className="featured-tool-card">
+                <div className="featured-tool-badge">LLM Observability</div>
+                <h3>LangSmith</h3>
+                <p>LLM development platform for tracing, evaluation, prompt engineering, and production monitoring across the full LLM lifecycle.</p>
+                <span className="card-link">View deep-dive →</span>
+              </Link>
+              <Link to="/tools/lakera-guard-review" className="featured-tool-card">
+                <div className="featured-tool-badge">LLM Security</div>
+                <h3>Lakera Guard</h3>
+                <p>Real-time LLM security layer that detects prompt injections, jailbreaks, and data leakage with sub-millisecond latency.</p>
+                <span className="card-link">View review →</span>
+              </Link>
+            </div>
+            <div style={{textAlign: 'center', marginTop: '2rem'}}>
+              <Link className="btn-primary" to="/ai-tools">
+                Browse All AI Tools →
+              </Link>
+            </div>
+          </div>
+        </section>
+
+        {/* Step 4: ARCHITECTURE INTELLIGENCE SHOWCASE */}
+        <section className="section">
+          <div className="container">
+            <div className="section-header">
+              <span className="section-label">Architecture Patterns</span>
+              <h2>Architecture Intelligence</h2>
+              <p>Battle-tested architecture patterns for secure, observable, and scalable AI systems in production.</p>
+            </div>
+            <div className="arch-showcase-grid">
+              <Link to="/docs/ai-architecture/secure-llm-pipelines" className="arch-card">
+                <span className="arch-card-number">01</span>
+                <h3>Secure LLM Pipeline Architecture</h3>
+                <p>Design defense-in-depth LLM pipelines with input validation, output filtering, and runtime security controls.</p>
+              </Link>
+              <Link to="/docs/ai-architecture/ai-gateway-architecture" className="arch-card">
+                <span className="arch-card-number">02</span>
+                <h3>AI Gateway Architecture</h3>
+                <p>Centralized gateway patterns for LLM routing, rate limiting, cost governance, and multi-provider failover.</p>
+              </Link>
+              <Link to="/docs/ai-architecture/enterprise-ai-security" className="arch-card">
+                <span className="arch-card-number">03</span>
+                <h3>Enterprise AI Security</h3>
+                <p>Comprehensive security frameworks for enterprise AI — access control, data protection, compliance, and audit trails.</p>
+              </Link>
+              <Link to="/docs/ai-architecture/ai-observability-stack" className="arch-card">
+                <span className="arch-card-number">04</span>
+                <h3>AI Observability Stack</h3>
+                <p>Full-stack monitoring and observability for AI systems — traces, metrics, logs, and model performance dashboards.</p>
+              </Link>
+            </div>
+          </div>
+        </section>
+
+        {/* SERVICES OVERVIEW — Step 10: Preserve consulting credibility */}
+        <section className="section section-alt">
           <div className="container">
             <div className="section-header">
               <span className="section-label">What We Do</span>
@@ -118,7 +241,7 @@ export default function Home(): ReactNode {
         </section>
 
         {/* WHY CHOOSE US */}
-        <section className="section section-alt">
+        <section className="section">
           <div className="container">
             <div className="section-header">
               <span className="section-label">Why AIOps Vista</span>
@@ -146,87 +269,142 @@ export default function Home(): ReactNode {
           </div>
         </section>
 
-        {/* DOCUMENTATION HIGHLIGHT */}
+        {/* Step 5: DEVELOPER DISCOVERY NAVIGATION */}
+        <section className="section section-alt">
+          <div className="container">
+            <div className="section-header">
+              <span className="section-label">Developer Resources</span>
+              <h2>Explore AI Infrastructure Intelligence</h2>
+              <p>Navigate our growing library of architecture guides, tool reviews, and infrastructure patterns.</p>
+            </div>
+            <div className="discovery-grid">
+              <Link to="/ai-tools" className="discovery-card">
+                <div className="discovery-icon">🗂️</div>
+                <h3>AI Tool Directory</h3>
+                <p>Curated directory of AI infrastructure tools — security, observability, orchestration, RAG, vector databases, and agent frameworks.</p>
+              </Link>
+              <Link to="/comparisons" className="discovery-card">
+                <div className="discovery-icon">⚖️</div>
+                <h3>Tool Comparisons</h3>
+                <p>Side-by-side feature comparisons — LangChain vs Haystack, Lakera vs Guardrails, Langfuse vs Arize, and more.</p>
+              </Link>
+              <Link to="/docs/category/ai-architecture" className="discovery-card">
+                <div className="discovery-icon">🏗️</div>
+                <h3>Architecture Guides</h3>
+                <p>Production architecture patterns for LLM pipelines, AI gateways, observability stacks, and enterprise security.</p>
+              </Link>
+              <Link to="/tools" className="discovery-card">
+                <div className="discovery-icon">📝</div>
+                <h3>Tool Reviews</h3>
+                <p>Hands-on technical reviews with architecture analysis, deployment guidance, and integration patterns.</p>
+              </Link>
+              <Link to="/docs/category/cloud-devops" className="discovery-card">
+                <div className="discovery-icon">☁️</div>
+                <h3>Cloud & DevOps</h3>
+                <p>CI/CD pipeline patterns, Kubernetes production checklists, Terraform modules, and cloud architecture guides.</p>
+              </Link>
+              <Link to="/docs/category/labs" className="discovery-card">
+                <div className="discovery-icon">🧪</div>
+                <h3>Hands-On Labs</h3>
+                <p>Build real projects — RAG systems, AI chatbots, anomaly detection pipelines, and AIOps implementations.</p>
+              </Link>
+            </div>
+          </div>
+        </section>
+
+        {/* Step 6: LEAD GENERATION — Work With Experts */}
         <section className="section">
           <div className="container">
-            <div className="section-header">
-              <span className="section-label">Open Knowledge</span>
-              <h2>Technical Documentation</h2>
-              <p>Free, in-depth guides on AI infrastructure, LLM operations, and cloud-native engineering.</p>
-            </div>
-            <div className="docs-highlight-grid">
-              <Link to="/docs/category/ai-tools" className="doc-card">
-                <h3>🛡️ AI Tools</h3>
-                <p>LLM security, observability, orchestration, RAG platforms, and agent framework analysis.</p>
-              </Link>
-              <Link to="/docs/category/ai-architecture" className="doc-card">
-                <h3>🏗️ AI Architecture</h3>
-                <p>Secure LLM pipelines, AI observability stack, production RAG systems, and gateway patterns.</p>
-              </Link>
-              <Link to="/docs/category/aiops" className="doc-card">
-                <h3>📊 AIOps</h3>
-                <p>Monitoring, anomaly detection, incident management, and predictive operations.</p>
-              </Link>
-              <Link to="/docs/category/cloud-devops" className="doc-card">
-                <h3>☁️ Cloud & DevOps</h3>
-                <p>AWS, Azure, GCP services, CI/CD pipelines, and production deployments.</p>
-              </Link>
-              <Link to="/docs/category/ai-infrastructure" className="doc-card">
-                <h3>🖥️ AI Infrastructure</h3>
-                <p>GPU clusters, model serving, MLOps pipelines, and infrastructure as code.</p>
-              </Link>
-              <Link to="/docs/category/labs" className="doc-card">
-                <h3>🧪 Hands-On Labs</h3>
-                <p>Build real projects — chatbots, anomaly detection, RAG systems.</p>
-              </Link>
+            <div className="lead-gen-section">
+              <div className="lead-gen-content">
+                <span className="section-label">Expert Consulting</span>
+                <h2>Work With AI Infrastructure Experts</h2>
+                <p>
+                  AIOpsVista helps engineering teams design, build, and secure production AI systems.
+                  Whether you are deploying your first LLM pipeline or scaling enterprise AI infrastructure,
+                  our team brings hands-on expertise across the full stack.
+                </p>
+                <div className="lead-gen-capabilities">
+                  <div className="lead-gen-item">
+                    <span>🏗️</span>
+                    <span>AI platform architecture design and review</span>
+                  </div>
+                  <div className="lead-gen-item">
+                    <span>🔐</span>
+                    <span>LLM security, governance, and compliance</span>
+                  </div>
+                  <div className="lead-gen-item">
+                    <span>📡</span>
+                    <span>AI observability and monitoring implementation</span>
+                  </div>
+                  <div className="lead-gen-item">
+                    <span>⚙️</span>
+                    <span>DevOps automation for AI/ML systems</span>
+                  </div>
+                </div>
+                <Link className="btn-primary" to="/contact">
+                  Schedule a Consultation →
+                </Link>
+              </div>
+              <div className="lead-gen-proof">
+                <div className="lead-gen-proof-card">
+                  <span className="lead-gen-proof-label">What We Deliver</span>
+                  <ul>
+                    <li>Architecture design documents</li>
+                    <li>Security and compliance reviews</li>
+                    <li>Tool selection and evaluation</li>
+                    <li>Production deployment runbooks</li>
+                    <li>Team enablement and training</li>
+                  </ul>
+                </div>
+              </div>
             </div>
           </div>
         </section>
 
-        {/* AI TOOLS & COMPARISONS */}
+        {/* Step 7: STARTUP PARTNERSHIP SECTION */}
         <section className="section section-alt">
           <div className="container">
-            <div className="section-header">
-              <span className="section-label">AI Infrastructure Intelligence</span>
-              <h2>AI Tool Intelligence</h2>
-              <p>In-depth reviews, comparisons, and architecture guides for AI infrastructure tools.</p>
-            </div>
-            <div className="services-grid">
-              <Link to="/ai-tools" className="doc-card">
-                <h3>🗂️ AI Tool Directory</h3>
-                <p>Curated directory of AI infrastructure tools — security, observability, orchestration, RAG, agents, and MLOps.</p>
-              </Link>
-              <Link to="/tools" className="doc-card">
-                <h3>📝 Tool Reviews</h3>
-                <p>Hands-on technical reviews with architecture analysis, pros/cons, and implementation guidance.</p>
-              </Link>
-              <Link to="/comparisons" className="doc-card">
-                <h3>📊 Head-to-Head Comparisons</h3>
-                <p>Side-by-side feature comparisons to help you pick the right tool for your stack.</p>
-              </Link>
-              <Link to="/docs/category/ai-architecture" className="doc-card">
-                <h3>🏗️ Architecture Guides</h3>
-                <p>Production architecture patterns for secure LLM pipelines, AI observability, and agent systems.</p>
-              </Link>
-              <Link to="/partner-with-aiopsvista" className="doc-card">
-                <h3>🤝 Partner Program</h3>
-                <p>AI infrastructure startups — grow your tool through technical reviews and consulting referrals.</p>
-              </Link>
-              <Link to="/services#ai-infrastructure" className="doc-card">
-                <h3>🤖 AI Infrastructure Consulting</h3>
-                <p>Expert consulting for LLM pipelines, AI security, observability, and agent deployment.</p>
-              </Link>
+            <div className="partnership-section">
+              <div className="section-header">
+                <span className="section-label">Partnership Program</span>
+                <h2>For AI Infrastructure Startups</h2>
+                <p>AIOpsVista collaborates with AI infrastructure companies to bring developer visibility through technical content and architecture integration.</p>
+              </div>
+              <div className="partnership-grid">
+                <div className="partnership-card">
+                  <h3>🏗️ Architecture Guides</h3>
+                  <p>Your tool featured in production architecture patterns read by engineering teams evaluating AI infrastructure.</p>
+                </div>
+                <div className="partnership-card">
+                  <h3>📝 Tool Reviews</h3>
+                  <p>In-depth technical reviews with architecture analysis, deployment guidance, and hands-on evaluation.</p>
+                </div>
+                <div className="partnership-card">
+                  <h3>⚖️ Comparison Content</h3>
+                  <p>Head-to-head comparisons that help developers understand your tool's strengths in context.</p>
+                </div>
+                <div className="partnership-card">
+                  <h3>👥 Developer Visibility</h3>
+                  <p>Reach engineering teams actively researching AI infrastructure tools and architecture patterns.</p>
+                </div>
+              </div>
+              <div style={{textAlign: 'center', marginTop: '2rem'}}>
+                <Link className="btn-primary" to="/partner-with-aiopsvista">
+                  Explore Partnership Program →
+                </Link>
+              </div>
             </div>
           </div>
         </section>
 
-        {/* FEATURED BLOG POSTS */}
-        <section className="section section-alt">
+        {/* FEATURED BLOG POSTS — Step 8: Traffic growth content */}
+        <section className="section">
           <div className="container">
             <div className="section-header">
               <span className="section-label">From the Blog</span>
               <h2>Latest Articles</h2>
-              <p>Practical guides and insights from our consulting practice.</p>
+              <p>Practical guides and insights on AI infrastructure, DevOps patterns, and tool evaluations.</p>
             </div>
             <div className="blog-grid">
               <Link to="/blog/building-aiops-strategy" className="blog-card">
@@ -257,7 +435,7 @@ export default function Home(): ReactNode {
         </section>
 
         {/* NEWSLETTER */}
-        <section className="section">
+        <section className="section section-alt">
           <div className="container">
             <div className="newsletter-section">
               <div className="newsletter-text">
