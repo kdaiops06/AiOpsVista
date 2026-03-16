@@ -3,6 +3,7 @@
 **AI Infrastructure Intelligence Hub | DevOps & AIOps Consulting | LLM Security & Observability**
 
 [![Live](https://img.shields.io/badge/Live-aiopsvista.com-0f62fe?style=flat-square)](https://aiopsvista.com) [![Pages](https://img.shields.io/badge/Pages-80+-6929c4?style=flat-square)](#pages) [![Deploy](https://img.shields.io/badge/Deploy-GitHub%20Pages-222?style=flat-square)](https://github.com/kdaiops06/AiOpsVista/actions) [![Docusaurus](https://img.shields.io/badge/Docusaurus-3.9.2-3ecc5f?style=flat-square)](https://docusaurus.io)
+[![GitHub stars](https://img.shields.io/github/stars/kdaiops06/AiOpsVista?style=flat-square)](https://github.com/kdaiops06/AiOpsVista/stargazers) [![Last Commit](https://img.shields.io/github/last-commit/kdaiops06/AiOpsVista?style=flat-square)](https://github.com/kdaiops06/AiOpsVista/commits/main) [![GitHub Pages](https://img.shields.io/github/deployments/kdaiops06/AiOpsVista/github-pages?style=flat-square&label=GitHub%20Pages)](https://github.com/kdaiops06/AiOpsVista/deployments) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow?style=flat-square)](https://github.com/kdaiops06/AiOpsVista/blob/main/LICENSE)
 
 [Live Site](https://aiopsvista.com) · [AI Tool Directory](https://aiopsvista.com/ai-tools) · [Comparisons](https://aiopsvista.com/comparisons) · [Docs](https://aiopsvista.com/docs/) · [Blog](https://aiopsvista.com/blog) · [Partner Program](https://aiopsvista.com/partner-with-aiopsvista)
 
