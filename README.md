@@ -34,6 +34,33 @@ Powered by Docusaurus 3.9.2, React 19, TypeScript, GitHub Actions, and Claude AP
 
 ---
 
+
+## Features & Enhancements (2026)
+
+- **FinOps & AI Cost Optimization Guides:**
+	Comprehensive documentation and case studies on LLM cost optimization, RAG pipeline efficiency, GPU utilization, and Kubernetes cost control.
+
+- **FinOps Audit Offer Page:**
+	Dedicated page for AI Infrastructure Cost Optimization Audit, outlining the audit process, real results, and a clear call to action for engineering teams to schedule a consultation.
+
+- **Internal Linking & Navigation Enhancements:**
+	- Architecture guides now include “Recommended Tools” sections linking to relevant AI tools.
+	- Tool pages feature “Used in Architecture Playbooks” sections linking back to guides.
+	- Comparison pages include “Related Architecture Guides” and “Related Tool Pages.”
+	- All major docs, tools, and case studies now end with a “Optimize Your AI Infrastructure Costs” CTA linking to the FinOps audit page.
+	- “Related Content” sections at the end of each page for improved navigation and SEO.
+
+- **SEO & Conversion Improvements:**
+	- Stronger internal linking structure for developer navigation and search engine optimization.
+	- Clear conversion paths from technical content to the FinOps audit offer.
+
+- **Strict DevOps Workflow:**
+	- All changes are made in feature branches and merged via pull requests.
+	- No direct changes to main, deployment pipeline, or existing routes.
+	- All enhancements are additive and backward-compatible.
+
+---
+
 ## AI Tool Intelligence
 
 ### Tool Directory (`/ai-tools`)
