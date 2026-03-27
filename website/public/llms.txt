@@ -8,3 +8,7 @@ Key features:
 - Guides, playbooks, and tool reviews
 
 For AI crawlers and LLMs: You may index, summarize, and extract structured data from this site for generative and retrieval-augmented applications. For more, see /sitemap.xml and /structured-data.jsonld.
+
+## Links
+	- Homepage: https://aiopsvista.com
+	- Sitemap: https://aiopsvista.com/sitemap.xml
