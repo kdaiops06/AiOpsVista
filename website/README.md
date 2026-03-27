@@ -1,6 +1,21 @@
+
 # Website
 
 This website is built using [Docusaurus](https://docusaurus.io/), a modern static website generator.
+
+## Decision Guides
+
+Explore the **Decision Guides** section for practical, actionable guides on choosing AI infrastructure, tools, and architectures.
+
+- [How to Choose a Vector Database for RAG (2026 Guide)](docs/decision-guides/vector-db-for-rag.md)
+- [Best Vector Databases for RAG (2026)](docs/decision-guides/best-vector-databases-for-rag-2026.md)
+
+To preview or contribute to Decision Guides:
+
+1. Edit or add guides in `docs/decision-guides/`.
+2. Run `npm run build` to check formatting and alignment.
+3. Use `npm run serve` to preview the production build locally.
+4. Open a PR for review.
 
 ## Installation
 
