@@ -1,0 +1,11 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "AIOpsVista",
+  "url": "https://aiopsvista.com/",
+  "logo": "https://aiopsvista.com/img/og-image.png",
+  "description": "AIOpsVista is an AIOps platform for AI infrastructure, observability, cost optimization, and LLM security.",
+  "sameAs": [
+    "https://github.com/kdaiops06/AiOpsVista"
+  ]
+}
