@@ -1,3 +1,4 @@
+---
 title: Best Vector Database Comparison Guide for RAG (2026)
 description: The best 2026 guide for comparing and choosing vector databases for Retrieval-Augmented Generation (RAG). Includes decision criteria, tool comparison, cost, and expert recommendations for Pinecone, Weaviate, Qdrant, Milvus, Chroma, and more.
 slug: /decision-guides/vector-db-for-rag
