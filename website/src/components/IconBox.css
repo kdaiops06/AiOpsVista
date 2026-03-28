@@ -1,0 +1,12 @@
+.icon-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(99,102,241,0.10);
+  margin: 0 auto 1rem auto;
+  font-size: 1.7rem;
+  box-shadow: 0 2px 8px 0 rgba(99,102,241,0.08);
+}
