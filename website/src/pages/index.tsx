@@ -6,28 +6,26 @@ import Heading from '@theme/Heading';
 export default function Home(): ReactNode {
   return (
     <Layout
-      title="AI Infrastructure Intelligence & DevOps Consulting"
-      description="AIOps Vista — AI infrastructure intelligence hub. Architecture intelligence, AI tool discovery, and DevOps consulting for modern AI platforms.">
+      title="AI cost reduction + production reliability for LLM and RAG systems"
+      description="Cut your AI infrastructure cost by 30–60%. We help teams running LLM, RAG, and GPU workloads reduce cost, improve reliability, and gain visibility into production AI systems.">
 
-      {/* HERO — Step 1: Enhanced positioning with three pillars */}
+      {/* HERO — Sharper AIOpsVista positioning */}
       <header className="hero-section">
         <div className="hero-bg-pattern" />
         <div className="container hero-content">
-          <span className="hero-badge">AI Infrastructure Intelligence &middot; Developer Tool Discovery &middot; DevOps Consulting</span>
+          <span className="hero-badge">AI cost reduction + production reliability for LLM and RAG systems</span>
           <Heading as="h1" className="hero-title">
-            Build Secure, Production-Ready<br />AI Infrastructure
+            Cut Your AI Infrastructure Cost by 30–60%
           </Heading>
           <p className="hero-description">
-            Architecture intelligence, AI tool discovery, and DevOps consulting for modern AI platforms.
-            From LLM pipeline security and AI observability to Kubernetes architecture
-            and AIOps implementation — we deliver results.
+            We help teams running LLM, RAG, and GPU workloads reduce cost, improve reliability, and gain visibility into production AI systems.
           </p>
           <div className="hero-actions">
             <Link className="btn-primary" to="/contact">
-              Book a Free Consultation
+              Get AI Infrastructure Audit
             </Link>
             <Link className="btn-secondary" to="/ai-tools">
-              Explore AI Tools
+              Explore Optimization Guides
             </Link>
           </div>
           <div className="hero-trust">
@@ -42,6 +40,7 @@ export default function Home(): ReactNode {
           </div>
         </div>
       </header>
+
 
       <main>
         {/* STATS */}
@@ -68,47 +67,23 @@ export default function Home(): ReactNode {
           </div>
         </section>
 
-        {/* Step 2: AI INFRASTRUCTURE INTELLIGENCE — Authority Section */}
+        {/* VALUE PROPS — Sharper positioning */}
         <section className="section">
           <div className="container">
             <div className="section-header">
-              <span className="section-label">Deep Technical Expertise</span>
-              <h2>AI Infrastructure Intelligence</h2>
-              <p>Production-tested architecture guides, tool evaluations, and infrastructure patterns for engineering teams building AI systems.</p>
-            </div>
-            <div className="authority-grid">
-              <Link to="/docs/ai-architecture/secure-llm-pipelines" className="authority-card">
-                <div className="authority-icon">🔐</div>
-                <h3>Secure LLM Pipeline Architecture</h3>
-                <p>End-to-end security patterns for LLM deployments — input validation, output filtering, prompt injection defense, and data governance.</p>
-                <span className="card-link">Read guide →</span>
-              </Link>
-              <Link to="/docs/ai-architecture/ai-observability-stack" className="authority-card">
-                <div className="authority-icon">📡</div>
-                <h3>AI Observability Stack</h3>
-                <p>Full-stack observability for AI systems — trace LLM calls, monitor model performance, track token costs, and detect drift.</p>
-                <span className="card-link">Read guide →</span>
-              </Link>
-              <Link to="/docs/ai-architecture/production-rag-systems" className="authority-card">
-                <div className="authority-icon">🧠</div>
-                <h3>RAG Production Deployment</h3>
-                <p>Production architecture for retrieval-augmented generation — vector databases, embedding pipelines, chunking strategies, and evaluation.</p>
-                <span className="card-link">Read guide →</span>
-              </Link>
-              <Link to="/docs/ai-architecture/prompt-injection-defense" className="authority-card">
-                <div className="authority-icon">🛡️</div>
-                <h3>Prompt Injection Defense</h3>
-                <p>Multi-layer defense architecture against prompt injection attacks — input sanitization, output validation, and runtime guardrails.</p>
-                <span className="card-link">Read guide →</span>
-              </Link>
-            </div>
-            <div style={{textAlign: 'center', marginTop: '2rem'}}>
-              <Link className="btn-primary" to="/docs/category/ai-architecture">
-                View All Architecture Guides →
-              </Link>
+              <span className="section-label">Why AIOpsVista</span>
+              <h2>AI Cost & Reliability Wins</h2>
+              <ul style={{fontSize: '1.25rem', margin: '2rem 0 0 0', padding: 0, listStyle: 'none'}}>
+                <li style={{marginBottom: '1rem'}}>• Reduce LLM token and inference cost</li>
+                <li style={{marginBottom: '1rem'}}>• Optimize RAG pipelines and vector usage</li>
+                <li style={{marginBottom: '1rem'}}>• Improve production reliability and latency</li>
+                <li style={{marginBottom: '1rem'}}>• Gain visibility into AI cost and performance</li>
+              </ul>
             </div>
           </div>
         </section>
+
+        {/* ...existing code... */}
 
         {/* Step 3: FEATURED AI INFRASTRUCTURE TOOLS */}
         <section className="section section-alt">
@@ -314,73 +289,33 @@ export default function Home(): ReactNode {
 
         {/* Step 6: LEAD GENERATION — Work With Experts */}
         <section className="section">
-          <div className="container">
-            <div className="lead-gen-section">
-              <div className="lead-gen-content">
-                <span className="section-label">Expert Consulting</span>
-                <h2>Work With AI Infrastructure Experts</h2>
-                <p>
-                  AIOpsVista helps engineering teams design, build, and secure production AI systems.
-                  Whether you are deploying your first LLM pipeline or scaling enterprise AI infrastructure,
-                  our team brings hands-on expertise across the full stack.
-                </p>
-                <div className="lead-gen-capabilities">
-                  <div className="lead-gen-item">
-                    <span>🏗️</span>
-                    <span>AI platform architecture design and review</span>
-                  </div>
-                  <div className="lead-gen-item">
-                    <span>🔐</span>
-                    <span>LLM security, governance, and compliance</span>
-                  </div>
-                  <div className="lead-gen-item">
-                    <span>📡</span>
-                    <span>AI observability and monitoring implementation</span>
-                  </div>
-                  <div className="lead-gen-item">
-                    <span>⚙️</span>
-                    <span>DevOps automation for AI/ML systems</span>
-                  </div>
-                </div>
-                <Link className="btn-primary" to="/contact">
-                  Schedule a Consultation →
                 </Link>
               </div>
-              <div className="lead-gen-proof">
-                <div className="lead-gen-proof-card">
-                  <span className="lead-gen-proof-label">What We Deliver</span>
-                  <ul>
-                    <li>Architecture design documents</li>
-                    <li>Security and compliance reviews</li>
-                    <li>Tool selection and evaluation</li>
-                    <li>Production deployment runbooks</li>
-                    <li>Team enablement and training</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Step 7: STARTUP PARTNERSHIP SECTION */}
-        <section className="section section-alt">
-          <div className="container">
-            <div className="partnership-section">
-              <div className="section-header">
-                <span className="section-label">Partnership Program</span>
-                <h2>For AI Infrastructure Startups</h2>
-                <p>AIOpsVista collaborates with AI infrastructure companies to bring developer visibility through technical content and architecture integration.</p>
-              </div>
-              <div className="partnership-grid">
-                <div className="partnership-card">
-                  <h3>🏗️ Architecture Guides</h3>
-                  <p>Your tool featured in production architecture patterns read by engineering teams evaluating AI infrastructure.</p>
+                <div className="lead-gen-content">
+                  <span className="section-label">AI Infrastructure Audit</span>
+                  <h2>Get a Custom AI Cost & Reliability Audit</h2>
+                  <p>
+                    Uncover hidden cost leaks and reliability risks in your LLM, RAG, and GPU workloads. Our audit delivers a clear, actionable roadmap to reduce spend and boost uptime.
+                  </p>
+                  <div className="lead-gen-capabilities">
+                    <h4 style={{marginBottom: '0.5rem'}}>What You Get:</h4>
+                    <ul style={{marginBottom: '1rem'}}>
+                      <li>• Cost breakdown by LLM, RAG, and GPU usage</li>
+                      <li>• Identification of top cost drivers and waste</li>
+                      <li>• Reliability and latency risk assessment</li>
+                      <li>• Actionable optimization recommendations</li>
+                      <li>• Quick wins and long-term savings plan</li>
+                    </ul>
+                  </div>
+                  <Link className="btn-primary" to="/contact">
+                    Request My Audit →
+                  </Link>
                 </div>
                 <div className="partnership-card">
                   <h3>📝 Tool Reviews</h3>
-                  <p>In-depth technical reviews with architecture analysis, deployment guidance, and hands-on evaluation.</p>
-                </div>
-                <div className="partnership-card">
+                <span className="section-label">What We Do</span>
+                <h2>AI Cost Optimization & Reliability Services</h2>
+                <p>End-to-end solutions to cut AI infrastructure cost and maximize production reliability for LLM, RAG, and GPU workloads.</p>
                   <h3>⚖️ Comparison Content</h3>
                   <p>Head-to-head comparisons that help developers understand your tool's strengths in context.</p>
                 </div>
