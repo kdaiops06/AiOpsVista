@@ -289,8 +289,6 @@ export default function Home(): ReactNode {
 
         {/* Step 6: LEAD GENERATION — Work With Experts */}
         <section className="section">
-                </Link>
-              </div>
                 <div className="lead-gen-content">
                   <span className="section-label">AI Infrastructure Audit</span>
                   <h2>Get a Custom AI Cost & Reliability Audit</h2>
@@ -323,14 +321,11 @@ export default function Home(): ReactNode {
                   <h3>👥 Developer Visibility</h3>
                   <p>Reach engineering teams actively researching AI infrastructure tools and architecture patterns.</p>
                 </div>
-              </div>
               <div style={{textAlign: 'center', marginTop: '2rem'}}>
                 <Link className="btn-primary" to="/partner-with-aiopsvista">
                   Explore Partnership Program →
                 </Link>
               </div>
-            </div>
-          </div>
         </section>
 
         {/* FEATURED BLOG POSTS — Step 8: Traffic growth content */}
