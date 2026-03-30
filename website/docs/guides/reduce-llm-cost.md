@@ -1,7 +1,7 @@
 import FeatureCard from '../../src/components/FeatureCard';
 import FeatureGrid from '../../src/components/FeatureGrid';
 import CTABox from '../../src/components/CTABox';
-import { PiggyBank, Shuffle, Search, Layers, Eye, Cpu, Zap, Repeat, TrendingDown, Timer, CheckCircle2, BarChart3, AlertTriangle } from 'lucide-react';
+import { PiggyBank, Shuffle, Search, Layers, Eye, Cpu, Zap, Repeat, TrendingDown, Timer, CheckCircle2, BarChart3, AlertTriangle, Link2 } from 'lucide-react';
 import IconBox from '../../src/components/IconBox';
 
 export const meta = {
@@ -9,15 +9,9 @@ export const meta = {
   description: 'A practical, actionable guide to reduce LLM cost, optimize RAG, and cut OpenAI/GPU spend in production. Learn LLM cost optimization, RAG cost savings, and more.'
 };
 
-# Reduce Your LLM Cost by 30–60%
+# Reduce Your LLM & RAG Costs by 30–60%
 
-A practical guide to optimizing LLM, RAG, and GPU workloads in production systems.
-
-<CTABox headline="Find Where Your AI Spend Is Wasted" buttonText="Get AI Cost Audit" buttonHref="/contact">
-  Get a custom audit of your LLM, RAG, and GPU stack and uncover 30–60% cost savings.
-</CTABox>
-
-## Quick Answer: How to Reduce LLM Cost
+A practical, production-focused guide to optimizing LLM, RAG, and GPU workloads. Real teams have saved 30–60% on AI costs using these strategies.
 
 <FeatureGrid columns={3}>
   <FeatureCard icon={<PiggyBank size={28} color="#6366f1" />} title="Use Cheaper Models" description="Switch to smaller/cheaper models for simple tasks." />
@@ -26,6 +20,10 @@ A practical guide to optimizing LLM, RAG, and GPU workloads in production system
   <FeatureCard icon={<Repeat size={28} color="#6366f1" />} title="Use Caching" description="Cache frequent responses to avoid repeated calls." />
   <FeatureCard icon={<Eye size={28} color="#6366f1" />} title="Monitor Token Usage" description="Track and analyze token spend in detail." />
 </FeatureGrid>
+
+<CTABox headline="Get Your AI Cost Audit" buttonText="Get AI Cost Audit" buttonHref="/contact">
+  See exactly where you can save 30–60% on LLM, RAG, and GPU costs. Get a custom audit from our experts.
+</CTABox>
 
 ## Why LLM Cost Is High
 
@@ -47,8 +45,8 @@ A practical guide to optimizing LLM, RAG, and GPU workloads in production system
 
 ### RAG Optimization
 <FeatureGrid columns={2}>
-  <FeatureCard icon={<Search size={28} color="#6366f1" />} title="Better Chunking" description="Tune chunk size to minimize context and maximize relevance." />
-  <FeatureCard icon={<BarChart3 size={28} color="#6366f1" />} title="Top-K Tuning" description="Reduce the number of retrieved documents for each query." />
+  <FeatureCard icon={<Search size={28} color="#6366f1" />} title="Better Chunking" description="Tune chunk size to minimize context and maximize relevance. See our <a href='/docs/guides/rag'>RAG guide</a>." />
+  <FeatureCard icon={<BarChart3 size={28} color="#6366f1" />} title="Top-K Tuning" description="Reduce the number of retrieved documents for each query. Compare <a href='/docs/decision-guides/vector-db-for-rag'>vector databases</a>." />
 </FeatureGrid>
 
 ### Caching
@@ -63,11 +61,11 @@ A practical guide to optimizing LLM, RAG, and GPU workloads in production system
   <FeatureCard icon={<Zap size={28} color="#6366f1" />} title="Autoscaling" description="Scale infra up/down based on real-time demand." />
 </FeatureGrid>
 
-## Real-World Examples
+## Real-World Results
 <FeatureGrid columns={3}>
-  <FeatureCard icon={<TrendingDown size={28} color="#6366f1" />} title="40% Cost Reduction" description="Used model routing to cut OpenAI API bills by 40%." />
-  <FeatureCard icon={<Timer size={28} color="#6366f1" />} title="Lower Latency" description="Improved RAG retrieval for faster responses and lower cost." />
-  <FeatureCard icon={<Cpu size={28} color="#6366f1" />} title="Lower GPU Cost" description="Enabled autoscaling to reduce idle GPU spend." />
+  <FeatureCard icon={<TrendingDown size={28} color="#6366f1" />} title="40–60% Cost Reduction" description="Teams using routing and caching cut LLM bills by up to 60%." />
+  <FeatureCard icon={<Timer size={28} color="#6366f1" />} title="Lower Latency" description="Optimized RAG retrieval improved response times and reduced cost." />
+  <FeatureCard icon={<Cpu size={28} color="#6366f1" />} title="Lower GPU Cost" description="Autoscaling reduced idle GPU spend by 30%." />
 </FeatureGrid>
 
 ## Cost Optimization Checklist
@@ -96,3 +94,7 @@ A practical guide to optimizing LLM, RAG, and GPU workloads in production system
   <FeatureCard icon={<Eye size={28} color="#6366f1" />} title="How to reduce token usage?" description="Shorten prompts, use smaller context, and cache frequent queries." />
   <FeatureCard icon={<Search size={28} color="#6366f1" />} title="Is RAG cheaper than fine-tuning?" description="RAG can be cheaper for dynamic data, but fine-tuning is better for static, repetitive tasks." />
 </FeatureGrid>
+
+<CTABox headline="Ready to Save 30–60%?" buttonText="Get Your AI Cost Audit" buttonHref="/contact">
+  Start your custom audit and unlock major savings on LLM, RAG, and GPU costs.
+</CTABox>

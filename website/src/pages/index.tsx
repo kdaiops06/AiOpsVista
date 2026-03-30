@@ -324,12 +324,12 @@ export default function Home(): ReactNode {
               <h3>Tool Reviews</h3>
               <p>Hands-on technical reviews with architecture analysis, deployment guidance, and integration patterns.</p>
             </Link>
-            <Link to="/docs/category/cloud-devops" className="discovery-card">
+            <Link to="/docs/cloud-devops" className="discovery-card">
               <div className="discovery-icon">☁️</div>
               <h3>Cloud & DevOps</h3>
               <p>CI/CD pipeline patterns, Kubernetes production checklists, Terraform modules, and cloud architecture guides.</p>
             </Link>
-            <Link to="/docs/category/labs" className="discovery-card">
+            <Link to="/docs/labs" className="discovery-card">
               <div className="discovery-icon">🧪</div>
               <h3>Hands-On Labs</h3>
               <p>Build real projects — RAG systems, AI chatbots, anomaly detection pipelines, and AIOps implementations.</p>

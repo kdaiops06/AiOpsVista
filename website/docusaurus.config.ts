@@ -75,7 +75,7 @@ const config: Config = {
         {to: '/comparisons', label: 'Comparisons', position: 'left'},
         {
           type: 'docSidebar',
-          sidebarId: 'tutorialSidebar',
+          sidebarId: 'docsSidebar',
           position: 'left',
           label: 'Docs',
         },
@@ -108,14 +108,14 @@ const config: Config = {
             {label: 'Tool Directory', to: '/ai-tools'},
             {label: 'Tool Reviews', to: '/tools'},
             {label: 'Comparisons', to: '/comparisons'},
-            {label: 'AI Tools Docs', to: '/docs/category/ai-tools'},
+            {label: 'AI Tools Docs', to: '/docs/ai-tools'},
           ],
         },
         {
           title: 'Resources',
           items: [
             {label: 'Documentation', to: '/docs/'},
-            {label: 'AI Architecture Guides', to: '/docs/category/ai-architecture'},
+            {label: 'AI Architecture Guides', to: '/docs/ai-architecture'},
             {label: 'Blog', to: '/blog'},
             {label: 'Templates & Courses', to: '/resources'},
           ],

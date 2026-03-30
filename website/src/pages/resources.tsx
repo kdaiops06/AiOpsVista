@@ -42,7 +42,7 @@ const freeResources = [
     icon: '🧪',
     title: 'Hands-On Labs',
     description: 'End-to-end projects and labs for building AIOps pipelines, chatbots, anomaly detection systems, and more.',
-    link: '/docs/category/labs',
+    link: '/docs/labs',
     type: 'Documentation',
   },
 ];
