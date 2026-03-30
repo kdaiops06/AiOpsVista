@@ -94,12 +94,9 @@ Choose LangChain when you need **maximum flexibility and the broadest integratio
 
 → [RAG Platforms →](./rag-platforms) · [LangChain vs Haystack →](/comparisons/langchain-vs-haystack)
 
-## Related
+## See also
 
-- [DevOps for AI Agents →](/docs/ai-architecture/devops-for-ai-agents)
-- [Production RAG Systems →](/docs/ai-architecture/production-rag-systems)
-- [AI Agent Frameworks →](./ai-agent-frameworks)
-- [LangChain vs LlamaIndex →](/docs/comparisons/langchain-vs-llamaindex)
-- [LangChain vs Haystack →](/comparisons/langchain-vs-haystack)
-- [AI Tool Directory →](/ai-tools)
-- [AI Infrastructure Consulting →](/services)
+- [AI Agent Frameworks](/docs/ai-tools/ai-agent-frameworks)
+- [AI Gateways](/docs/ai-tools/ai-gateways)
+- [AI Observability Tools](/docs/ai-tools/ai-observability-tools)
+- [LLM Security Tools](/docs/ai-tools/llm-security-tools)

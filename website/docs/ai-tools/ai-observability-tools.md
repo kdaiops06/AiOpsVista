@@ -143,11 +143,9 @@ Arize Phoenix      Both (parallel)         Langfuse
 | **Staging** | Both | Quality gate validation before production promotion |
 | **Production** | Langfuse | Traces, cost tracking, prompt management, alerting |
 
-## Related
+## See also
 
-- [AI Observability Stack Architecture →](/docs/ai-architecture/ai-observability-stack)
-- [Production RAG Systems →](/docs/ai-architecture/production-rag-systems)
-- [LangSmith vs Langfuse →](/docs/comparisons/langsmith-vs-langfuse)
-- [Langfuse vs Arize Phoenix →](/comparisons/langfuse-vs-arize)
-- [AI Tool Directory →](/ai-tools)
-- [AI Infrastructure Consulting →](/services)
+- [AI Agent Frameworks](/docs/ai-tools/ai-agent-frameworks)
+- [LLM Orchestration Tools](/docs/ai-tools/llm-orchestration-tools)
+- [AI Gateways](/docs/ai-tools/ai-gateways)
+- [LLM Security Tools](/docs/ai-tools/llm-security-tools)

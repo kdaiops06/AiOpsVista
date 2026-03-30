@@ -192,12 +192,9 @@ Choose SlashLLM when you need an **all-in-one managed security platform** with S
 | **Growth (10-50 eng)** | Lakera Guard for injection defense + Guardrails AI for output quality |
 | **Enterprise (50+ eng)** | SlashLLM or Lakera Guard enterprise + Guardrails AI + custom policies |
 
-## Related
+## See also
 
-- [Secure LLM Pipelines Architecture →](/docs/ai-architecture/secure-llm-pipelines)
-- [Enterprise AI Security →](/docs/ai-architecture/enterprise-ai-security)
-- [Lakera Guard vs Guardrails AI →](/comparisons/lakera-vs-guardrails)
-- [SlashLLM vs Lakera Guard →](/comparisons/slashllm-vs-lakera)
-- [AI Gateway Architecture →](/docs/ai-architecture/ai-gateway-architecture)
-- [AI Tool Directory →](/ai-tools)
-- [AI Security Consulting →](/services)
+- [AI Agent Frameworks](/docs/ai-tools/ai-agent-frameworks)
+- [LLM Orchestration Tools](/docs/ai-tools/llm-orchestration-tools)
+- [AI Gateways](/docs/ai-tools/ai-gateways)
+- [AI Observability Tools](/docs/ai-tools/ai-observability-tools)

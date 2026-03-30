@@ -2201,3 +2201,20 @@ h3 { font-weight: 600; letter-spacing: -0.01em; }
 @media screen and (max-width: 600px) {
   .partnership-grid { grid-template-columns: 1fr; }
 }
+
+/* --- Docs Table & Code Block Responsive + Dark Mode Fixes --- */
+.markdown table,
+.markdown pre {
+  max-width: 100%;
+  overflow-x: auto;
+  display: block;
+}
+[data-theme='dark'] .markdown table {
+  background: #181a20;
+  color: #e5e7eb;
+}
+[data-theme='dark'] .markdown th,
+[data-theme='dark'] .markdown td {
+  border-color: #23283a;
+}
+/* --- End Fixes --- */
