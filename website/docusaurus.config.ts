@@ -75,7 +75,7 @@ const config: Config = {
         {to: '/comparisons', label: 'Comparisons', position: 'left'},
         {
           type: 'docSidebar',
-          sidebarId: 'tutorialSidebar',
+          sidebarId: 'docsSidebar',
           position: 'left',
           label: 'Docs',
         },
