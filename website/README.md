@@ -1,56 +1,99 @@
+# AIOps Vista Documentation & Website
 
-# Website
+AIOps Vista is a premium documentation and knowledge hub for AI infrastructure, DevOps, AIOps, LLM security, and production AI systems. Built with [Docusaurus 3](https://docusaurus.io/), it features:
 
-This website is built using [Docusaurus](https://docusaurus.io/), a modern static website generator.
+- Modular, conversion-optimized homepage and landing pages
+- Premium UI with custom React/MDX components
+- SEO-friendly guides, tool comparisons, and architecture patterns
+- Responsive, dark mode-friendly tables and code blocks
+- Internal linking, sidebar navigation, and category landing pages
 
-## Decision Guides
+---
 
-Explore the **Decision Guides** section for practical, actionable guides on choosing AI infrastructure, tools, and architectures.
+## 📁 Site Structure
 
-- [How to Choose a Vector Database for RAG (2026 Guide)](docs/decision-guides/vector-db-for-rag.md)
-- [Best Vector Databases for RAG (2026)](docs/decision-guides/best-vector-databases-for-rag-2026.md)
+```
+website/
+├── docs/
+│   ├── ai-architecture/      # AI architecture guides & patterns
+│   ├── ai-infra/             # AI infrastructure, MLOps, GPU, Kubernetes
+│   ├── ai-tools/             # Tool reviews, directories, security, observability
+│   ├── aiops/                # AIOps, monitoring, incident management
+│   ├── cloud-devops/         # Cloud, CI/CD, production deployment
+│   ├── comparisons/          # Tool comparison landing pages
+│   ├── decision-guides/      # How-to and decision guides
+│   ├── finops-ai/            # Cost optimization, FinOps
+│   ├── guides/               # How-to guides
+│   ├── labs/                 # Hands-on labs and projects
+│   ├── tool-setup/           # Tool setup guides
+│   ├── resources.md          # Resources landing page
+│   └── intro.md              # Docs homepage
+├── src/
+│   ├── components/           # Custom React components (UI, cards, grids)
+│   ├── css/custom.css        # Custom global styles (dark mode, tables, etc.)
+│   └── pages/                # Custom pages (homepage, resources, services, etc.)
+├── docusaurus.config.ts      # Docusaurus site config
+├── sidebars.ts               # Sidebar structure
+├── package.json              # Dependencies & scripts
+└── README.md                 # This file
+```
 
-To preview or contribute to Decision Guides:
+---
 
-1. Edit or add guides in `docs/decision-guides/`.
-2. Run `npm run build` to check formatting and alignment.
-3. Use `npm run serve` to preview the production build locally.
-4. Open a PR for review.
+## 🚀 Getting Started
 
-## Installation
-
+### 1. Install dependencies
 ```bash
+npm install
+# or
 yarn
 ```
 
-## Local Development
-
+### 2. Local development
 ```bash
+npm start
+# or
 yarn start
 ```
+Visit [http://localhost:3000](http://localhost:3000) to view the site.
 
-This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
-
-## Build
-
+### 3. Build for production
 ```bash
-yarn build
+npm run build && npm run serve
+# or
+yarn build && yarn serve
 ```
 
-This command generates static content into the `build` directory and can be served using any static contents hosting service.
+### 4. Deploy (Vercel, GitHub Pages, etc.)
+- **Vercel:**
+  ```bash
+  vercel --prod
+  ```
+- **GitHub Pages:**
+  ```bash
+  GIT_USER=<Your GitHub username> yarn deploy
+  ```
 
-## Deployment
+---
 
-Using SSH:
+## 🛠️ Key Features
+- **Responsive, dark mode-friendly tables/code blocks** (see `src/css/custom.css`)
+- **Premium UI**: FeatureCard, FeatureGrid, CTABox, IconBox, SectionWrapper
+- **SEO & Accessibility**: Internal linking, sidebar, category landing pages
+- **Easy content authoring**: Write in Markdown/MDX, use custom React components
+- **Modular structure**: Add new guides, tools, or categories easily
 
-```bash
-USE_SSH=true yarn deploy
-```
+---
 
-Not using SSH:
+## 🤝 Contributing
+- Fork and clone the repo
+- Create a feature branch: `git checkout -b my-feature`
+- Make changes, commit, and push
+- Open a Pull Request for review
 
-```bash
-GIT_USER=<Your GitHub username> yarn deploy
-```
+---
 
-If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
+## 📚 References
+- [Docusaurus Documentation](https://docusaurus.io/docs)
+- [AIOps Vista Main Site](https://aiopsvista.com)
+- [GitHub Repo](https://github.com/kdaiops06/AiOpsVista)
